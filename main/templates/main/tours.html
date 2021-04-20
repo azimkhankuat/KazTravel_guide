@@ -1,0 +1,15 @@
+{% extends 'main/base.html' %}
+{% load static  %}
+{% block title %}
+    KazTravel - Tours
+{% endblock %}
+
+{% block content %}
+    <h1 style="text-align: center">Tours</h1>
+    {% for el in all_tours %}
+        <div class="alert alert-warning mt-2">
+            <h3>{{ el.title }}</h3>
+            <p>{{ el.desc }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}

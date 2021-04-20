@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Tour
 
 
 # Create your views here.
@@ -12,4 +13,5 @@ def about(request):
 
 
 def tours(request):
-    return render(request, "main/tours.html")
+    all_tours = Tour.objects.all()
+    return render(request, "main/tours.html", {'all_tours': all_tours})
