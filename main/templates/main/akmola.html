@@ -1,0 +1,56 @@
+{% extends 'main/base.html' %}
+{% load static  %}
+{% block title %}
+    KazTravel - Homepage
+{% endblock %}
+
+{% block content %}
+<div class="mycontainer">
+    <div class="cityname">
+        <h2 class="myfont">AKMOLA, Kokshetau</h2>
+        <h5 class="myfont">Have a nice trip</h5>
+      </div>
+    <div class="city_data">
+        <div>
+            <p>Time</p>
+            <a id="month">Month </a>
+            <a id="date">Date </a><a>,</a>
+            <a id="year">Year</a><br>
+            <p id="cityTime">Time</p>
+            <a id="weekday">Weekday</a>
+            <script>
+                var m = new Date();
+                var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+                document.getElementById("month").innerHTML = months[m.getMonth()];
+
+                var d = new Date();
+                document.getElementById("date").innerHTML = d.getDate();
+
+                var y = new Date();
+                document.getElementById("year").innerHTML = y.getFullYear();
+
+                var w = new Date();
+                var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+                document.getElementById("weekday").innerHTML = days[w.getDay()];
+
+                var getCityTime = function(){
+                    document.getElementById("cityTime").innerHTML = new Date().toLocaleString("en-US", {timeZone:
+                    'Asia/Almaty', timeStyle:'medium', hourCycle:'h23'});
+                }
+                getCityTime();
+                setInterval(getCityTime, 1000);
+            </script>
+        </div>
+        <div>
+            <img src="http://openweathermap.org/img/w/{{ city_weather.icon }}.png" alt="Image">
+            <ul>
+                <li>{{ city_weather.temperature }}° C</li>
+                <li>{{ city_weather.description }}</li>
+            </ul>
+        </div>
+    </div>
+
+
+{% endblock %}
+
+</div>

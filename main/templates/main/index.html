@@ -1,17 +1,95 @@
 {% extends 'main/base.html' %}
+
 {% load static  %}
 {% block title %}
     KazTravel - Homepage
 {% endblock %}
 
 {% block content %}
-    <div class="mapdiv">
+<div class="mycontainer">
+	<div class="hotel_content">
 
+      <div class="title">
+        <h2 class="myfont">WELCOME TO KAZAKHSTAN</h2>
+        <h5 class="myfont">Explore beautiful places</h5>
+      </div>
+
+      <div class="booking_info">
+
+        <div class="opt">
+          <span class="active myfont">Hotel</span>
+          <span class="myfont">Flight</span>
+        </div>
+
+        <div class="booking_details">
+          <div class="item">
+            <div class="people"><h5 class="myfont">Where to go</h5></div>
+            <i class="fa fa-search"></i>
+              <select id="city" name="city" class="days">
+                <option value="akmola">Akmola</option>
+                <option value="aktobe">Aktobe</option>
+                <option value="almaty">Almaty</option>
+                <option value="atyrau">Atyrau</option>
+                <option value="east">East Kz</option>
+                <option value="jambyl">Jambyl</option>
+                <option value="karagandy">Karagandy</option>
+                <option value="kostanay">Kostanay</option>
+                <option value="kyzylorda">Kyzylorda</option>
+                <option value="mangysatu">Mangystau</option>
+                <option value="north">North Kz</option>
+                <option value="paclodar">Pavlodar</option>
+                <option value="turkestan">Turkestan</option>
+                <option value="west">West Kz</option>
+              </select>
+          </div>
+
+          <div class="item">
+            <div class="date"><h5 class="myfont">Check in</h5></div>
+            <input type="date" id="start" name="trip-start"
+             value="YYYY-MM-DD" min="2021-01-01" max="2021-12-31">
+          </div>
+
+          <div class="item">
+            <div class="date"><h5 class="myfont">Check out</h5></div>
+            <input type="date" id="end" name="trip-end"
+             value="YYYY-MM-DD" min="2021-01-01" max="2021-12-31">
+          </div>
+
+          <div class="item">
+            <div class="people"><h5 class="myfont">Guests</h5></div>
+            <select id="guest" name="guest" class="days">
+                <option value="guest1">1 guest</option>
+                <option value="guest2">2 guests</option>
+                <option value="guest3">3 guests</option>
+              </select>
+          </div>
+
+          <div class="item">
+            <div class="cta active">Search</div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <img src="{% static 'home/images/hotel.svg' %}" class="hotel">
+    <img src="{% static 'home/images/car1.svg' %}" class="car1">
+    <img src="{% static 'home/images/car2.svg' %}" class="car2">
+    <img src="{% static 'home/images/car3.svg' %}" class="car3">
+    <img src="{% static 'home/images/car4.svg' %}" class="car4">
+    <img src="{% static 'home/images/cloud.png' %}" class="cloud">
+    <img src="{% static 'home/images/cloud.png' %}" class="cloud_2">
+    <img src="{% static 'home/images/cloud.png' %}" class="cloud_3">
+    <img src="{% static 'home/images/cloud.png' %}" class="cloud_4">
+
+
+    <div class="mapdiv">
 		 <svg version="1.2" viewbox="0 0 1000 550" xmlns="http://www.w3.org/2000/svg">
 			<path d="M101 409.8l-0.2 0 0-2.3 0.2-0.3 0.3 0.6 0.5 0.5 0.4 0 0 0.2-0.9 0.7-0.3 0.6z m59.2-56.6l-0.7 0.4-0.5 0 0.2-0.6 1.3-1.6 0.3-0.1 0.1 0.5-0.1 0.3-0.2 0.5-0.4 0.6z" id="KAZ99" name="">
 			</path>
-
-		 	<a xlink:title="Aktobe" xlink:href="">
+		 	<a xlink:title="Aktobe" >
 		 		 <path d="M307.8 377.7l0.5 12.9-7.7-5.2 0.3-0.5 0.6-1.2 0.9-0.7 0.9-0.6 1-0.9 0.9-1 0.6-0.7 0.4-1.1 0.1-1.3-0.1-1 0-1.1 0.2-0.5 0.6-0.3 0.3-0.2 0.3 0.2 0 0.1 0 0.6-0.2 1.1 0.2 1.2 0.2 0.2z m120.6-88l4.7 7.8 1 2.2-2.4 2.6-30.9 22.5-2.2 0.1-2.8-1.4-2.3-0.3-2.3-0.7 0.5-1.6-3.7-5.5-3.6-3.6-3-1-4.6-7.4-7 0-6 1.5-5.3 7.5-2.3 6-6.1 9.4-5.6-0.4-2.4 2.4-0.7 4.3-5.9 1.4-6.1 4.5-6.1 6.4-13.6 18.2-0.9 3.8-0.8 0.1-0.5-0.2-0.2-0.6-1.2-0.1-0.3 0.1-0.1 0.3 0 0.3 0.2 0.6 0 0.1-0.3 0.4-0.4 0-1.5-0.4-0.1 0-0.5 0.3-0.5 0.2-0.2 0.2-0.5 0.9-0.3 0.4-0.4 0.1-0.2-0.1-0.3 0.1-0.2 0.2-0.8 1.4-0.1 0.4-0.5 1.5-0.4 1.1-0.1 0.4 0 0.6-0.1 0.4-0.2 0.9-0.1 0.8-0.1 0.7 0 0.6-0.1 0.6-0.1 0.2-0.6 0.7-0.1 0.2-0.1 0.6-0.2 0.5-0.2-0.2-0.6-0.2-0.6-0.1-2 0.6-5.9 1.7-5.6 1.7-12.2 3.7-6.9 2.2-6.9 2.3-5.1 1.6 0-0.2-4-27.4-1.7-4.6-1.3-2.5-0.5-2.2-0.5-1.8-2-3-0.6-3.7-19-7.2-5-4.7-3-4.5-2.2-5.4-2-3.1 0.1-5.2 1.8-12.6-0.3-4.2-2.2-9.1-2.4-2.9 0.1-4-0.9-4.4-1.1-4 0.6-4.6 0.6-0.8 0.1-2-1.2-4.1-2.2-0.2-1.1-0.9-0.8-1.4-1.3-0.2-1 0.7-1.1 1.7-1.2 3.3-9.1-2.1 0.5-1.3-0.3-1.8 0.1-3.5-0.7-4.2-1.9-4.5-1.8 2.6-0.9-0.6-0.2-1.1-2.8-1.5-1.7-1.6-0.1-3.8 1.2-4.3-0.1-2.3 1.2-0.3 1-2.2 1.2-1.1 3-0.9 0.7-1.3 1.3-0.1 2.9 0.3 2.8-1.5 0.1-1.5 1-1.4 1.5-1.4 1.3-1.9 0.4-2.1 1.1-2.3 0.3-1.6 0.6-2.2-0.7-1.4-1.1-0.8-1.3-2.3 0.3-4.1-1.1-3.9 1.6-1.8 0.4-1.9 1.8-2.9 0.1 0 1-0.5 1.4-1.1 0.7-1.2-0.1-1.2-0.8-2.8 0-0.8 0.3-1.5-0.1-0.8-0.1-0.2-0.3-0.4-0.1-0.3 0.1-0.4 0.3-0.7 0.2-0.3-0.3-1.5-1.4-0.8-1.4-0.4-0.5-0.5 0.3-0.3 0.4-0.3 0.3-0.3-0.5-1.5 0.2-0.5 0.5-0.2 2.1-0.7 0.5 0 0.6 0.1 0.5 0.3 1 0.9 1.6 0.8 0.5 0.5 0.7 1 0.8 0.9 3.8 1 0.3 0.9 0 1.5 0.5 1 5.5 5.1 0.5 0.4 0.5 0.1 0.4 0 1.3-0.3 0.6 0 0.6 0.1 0.6 0.5 0.4 0.6 0.1 0.6 0.3 0.5 1.1 0.5 0.4 0.4 0.8 1.1 1 0.7 0.9-0.3 1.7-1.9 4.1-2.3 3.6-3 0.5-0.9 0.9-4.7 0.2-0.9 0.3-0.5 0.4-0.1 2 0.9 0.8 0.2 0.6-0.1 0.5-0.5 0.2-0.6 0.2-1.4 0.3-0.4 1.3-0.2 0.4-0.5 0-0.5-0.3-1.2 0-0.5 0.3-0.5 0.3-0.4 0.8-0.7 0.7 0.3 2.2 3.2 0.5 0.2 1.7 0.4 0.5-0.1 0.1-0.4-0.2-0.7-0.5-1.2 0-0.8 0.3-0.5 0.5-0.4 0.5-0.2 0.6-0.1 0.4 0.2 0.9 0.7 0.6 0.3 0.7-0.1 0.6-0.1 0.6-0.3 0.6-0.2 2.1 0.2 1.1-0.3 1.6-1 0.4-0.1 0.4 0.2 0.3 0.8 0.2 1.5 0.2 0.7 0.4 0.3 0.6 0 0.4 0.1 0.4 0.4 0.4 0.6 0.2 0.6 0.3 1.4 0.3 0.6 0.3 0.6 0.5 0.5 1.6 0.9 0.6 0.2 0.6-0.1 0.6-0.3 0.4-0.5 0.3-0.6 0.3-0.6 0.5-0.3 1 0.1 2.3 0.8 0.8-0.5 0.4-1.1 0-1.3-0.2-2.6 0.1-1.4 0.5-0.9 0.3-0.9 0.7-0.1 1.1 0.6 0.4 0.1 1.4 0 0.3 0.2 0.2 0.2 0.4 0.6 0.2 0 0.7-0.3 0.3-0.1 1.9-0.4 0.2 0.1 0.1 0.2 0 0.6 0.6 0.4 0.6 0.4 0.7 0 0.6-0.4 0.2-0.7 0.3-0.8 0.3-0.7 0.5-0.3 0.5-0.2 1-0.6 0.4 0.3 0.7 0.8 0.3 0.5 0.1 0.6 0.1 0.5 0.1 0.4 0.5 0.3 3 0 1.1 0.5 0.7 1 0.2 1.7-0.1 0.7-0.3 0.6-0.4 0.4-0.4 0.5-0.1 0.5 0 0.7 0.3 0.7 0.3 0.4 0.4 0.1 1.3 0 0.2 0.3-0.2 1.5 0.1 0.6 0.4 0.4 0.7 0.1 0.7-0.2 0.7-0.1 0.5 0.5 0.4 1.3 0.2 0.4 0.4 0.5 1.9 1.4 0.9 0.4 6.7 0.6 0.5 0.2 0.4 0.5 0.3 0.6 0.3 0.3 0.3 0.2 0.4 0 2.4-0.5 1.2-0.1 1 0.7 0.5 0.5 1.3 0.6 0.3 0.2-0.1 1-0.6 0.3-1.4-0.2-0.6 0.5-0.1 0.6 0.4 0.6 1.4 1.2 0.8-0.3 0.8-0.9 0.8-0.7 1.3-0.2 1.3 0.1 1.2-0.2 1-1.1 1-2.3 0.3-0.6 0.8-0.9 0.3-0.5 0.1-0.7-0.1-1.3 0-0.8 0.1-0.7 1-2.5 0.2-0.3 0.2-0.3 1.1-0.4 1.5-0.1 1.3 0.5 0.4 1.4 0 1.4 0.6 1.1 0.8 0.9 0.9 0.7 1.3 0.7 10.2 1.2 2.5-0.4 6.7-2.3 6.8-2.3 0.8-0.8 0.5-1.2 0.4-1.6 0.4-3.5 0.2-1.1 1.1-6.5 0.6-1.8 0.8-1.1 1-0.6 1.3-0.3-0.4-0.2 0.6 0 3.5-0.2 1.4-1.1 1.3 2.2 0.3 2.1 0.5 2.2 1.8 2.5 3-1.7 3.4 2.7-0.8 1.1-0.5 2.6 3.3 3.6-1.7 3.8 0.2 2.2 0.9 0.9 2.3-0.1 2.2 9.1 3.9 8.3 4.8 7.6 0.5 4.8-2.2 0.9-2.6-1.3-2.5 2-1.3 3.9-2.4 2.5-1.2 3.2 1 3-3.2-0.1-1 1.3 0.3 1.7 4.7 8.1-2.5 0.3-2.6 1.3 2.4 0.7 1.8 4.3 5.3 6.5 3.7 1 2.2-1.2 3 0.7 0.6 2.8-0.6 3.6 15.4 8.2 7.6 11.7z" id="KAZ3195" name="Aqtöbe"></path>
 		 	</a>
 		 	<a xlink:title="Kostanay" xlink:href="">
@@ -26,7 +104,7 @@
 		 	<a xlink:title="West Kazakhstan" xlink:href="">
 		 		<path d="M198.1 200.4l-1.8 2.9-0.4 1.9-1.6 1.8 1.1 3.9-0.3 4.1 1.3 2.3 1.1 0.8 0.7 1.4-0.6 2.2-0.3 1.6-1.1 2.3-0.4 2.1-1.3 1.9-1.5 1.4-1 1.4-0.1 1.5-2.8 1.5-2.9-0.3-1.3 0.1-0.7 1.3-3 0.9-1.2 1.1-1 2.2-1.2 0.3 0.1 2.3-1.2 4.3 0.1 3.8-4.7 4.6-0.7 0.9 0.3 1.1-0.8 0.5-2.6 0.8-8.7 0-1.4-0.4-3.7 4.6 0.2 4.4-3.6 5.7-0.8 4.4 0 1.6-1.6 0.7-8.5-2.8-0.9 1.2-2.2-0.1-2-0.4-3.8-1.5 0.7-2.9-0.3-1.2-1.8-0.6-9.4-1.2-2.7 1-2.5 0.3-2.7 2.2-2.4 3.2-1.2 0.1-1.2 0.6-1.2 1.1-1.8 0.5-20 13.9-11 1-0.7 2.8-12.8-4.5-43.8-6.6 0-0.4-0.4-0.5-0.5-0.4-2.4-0.6-12.2-4.3 0-0.1 3.4-9.5 3.3-9.1 0.6-0.8 0.9-0.6 1.8-1 0.5-0.5 0.5-0.4 1.2-1.6 1-1.9 0.5-2-0.3-1.9-1.2-1.6-3.6-2.8-1.4-0.5 1.6-9.2 1.5-9.2 0.5-1.5 0.9-0.9 5.4-2.4 1.6-1.7 1.6-2 0.5-1.1-0.1-1.4-1.3-1.8-0.2-1.1 0.3-0.5 0.9-0.9 0.2-0.6-0.1-0.6-0.4-0.4-0.2-0.4 0.3-0.8 0.4-0.3 1.7-0.7 0.3-0.5 0.8-1.8 0.8-1.1 1-1 1.1-0.6 1.1 0 0.6 0.4 1.6 2.1 1.1 0.7 0.3 0.3 0.3 0.5 0.2 0.4 0.2 0.3 0.5 0.2 0.3 0.2 1.1 1.3 0.5 0.7 0.9 0.9 1 1.5 1 0.9 0.2 0.4 0.1 0.5 0.2 0.6 0.3 0.4 1.2 1 0.5 1 0.2 1.1 0.2 1.1 0.3 1.1 0.2 0.3 0.2 0.8 0.2 0.3 0.3 0.3 1 0.8 0.4 0.9 0.2 0.9 0.3 0.5 0.9 0.1 0.7-0.1 0.2 0.1 1.1 1.1 1.5 0.8 0.3 0.1 0.3-0.2 0.5-0.8 0.4-0.3 5-1.9 2.4-1.5 1.9-2.2 0.4-0.7 0.2-0.4 0-0.4-0.3-1.5-0.2-0.6-0.3-0.4-1.7-0.6-0.1-0.9 0.2-1.4-0.4-1.5-1-2-0.7-2.7-0.7-5.5 0.1-2.7-0.1-1.2-0.6-0.8-1.2-0.3-0.6-0.3-0.2-0.8 0.4-0.5 0.6 0.1 3.2 1.9 1.2 0.3 1-0.2 4.5-3.4 2.2-2.9 1-0.9 3.4-0.8 2.1-0.9 1-0.9 0.3-1.3-0.4-1.2-0.8-1-0.6-1 0.3-1.1 0.6-1 0.2-0.6 0.2-1.3 0.2-0.7 0.3-0.6 0.4-0.4 0.5-0.2 2 0.6 5.8 0 0.4-0.3 1.2-1.6 3.5-3.1 1-0.5 4.4-0.9 2.9-1.5 0.4-0.3 0.2-0.4-0.1-0.5-0.2-0.7 0-0.8 0.2-0.3 0.4-0.3 0.3-0.3-0.3-0.4-0.1-0.3 0.2-0.2 0.3-0.1 1.5-0.1 0.4-0.1 0.3-0.4 0.2-0.7 0.6-0.1 0.4-0.1 0.2-0.4 0.1-0.9-0.2-2.3 0.1-0.6 0.4-0.4 0.5-0.1 0.3-0.3 0-1 0.1-0.9 0.5 0 0.9 0.8 1.2 0 0.2 0.2-0.5 0.6-0.4 0.7 0.3 0.4 0.6 0 0.6 0 1.1-0.5 0.6-0.7 0.1-1.1-1.1-3.3-0.1-1.3 0.6-0.7 1.3 0.3 0.4 0.3 0.5 0.4 0.4 0.5 0.2 0.6 0.4 0.8 0.6 0.3 6 0.4 0.5-0.2 0.6-0.3 0.5-0.2 0.4 0.3 0.6 1.1 0.3 0.3 0.5 0.2 1.1 0.1 0.4 0.2 0.3 0.8 0 0.9-0.2 0.6-0.4 0.4-0.5 0.3-2.3 0.4-0.2 0.3 0.3 0.6 0.4 0.6 0.2 0.5 0.8 0.8 1.8 0.2 2-0.3 1.3-0.7 0.5-0.6 0.3-0.6 0.3-0.4 0.6 0 0.7 0.2 0.2 0.4 0.1 0.6 0 0.9 0.6 1.1 1.1-0.1 1.2-0.7 1-0.8 0-1.4-0.4-1.3-0.1-1.2 1.4-1.6 0.7-1.1 0.5-0.5 0.7-0.2 0.7 0 0.6 0.3 0.7 0.4 0.6 0.2 0.8 0.1 0.7 0 0.6-0.2 0.5-0.5 0.6-1.2 0.3-0.6 0.6-0.3 1.4 0.1 0.7-0.1 0.5-0.4 0.3-1.2 0.4-0.4 0.7 0.4 0.4 1.4 0.3 1.5 0.3 1.2 1.7 3.2 0.6 2.5 0.2 0.4 0.3 0.5 0.4 0.6 0.4 0.4 0.5 0.3 0.2 0.1 0.5-0.4 2.2 0.2 0.1 0.3 0.3-0.2 0.3-0.3 0.2-0.4 0.2-0.2 0.3-0.1 0.6-0.1 0.2-0.1 0.1-0.3 0.2-0.3 0.3-0.1 0.3 0.1 0.5 0.6 0.2 0.1 1.4-0.1 0.5 0.2-0.3 0.7 0.5 0.1 0.6 0.4 0.4 0.1 0.3-0.1 0.4-0.3 0.3-0.4 0.3-0.3 0.9-0.4 3 0.1-0.2-0.7 0.1-0.3 0.3 0 0.4 0 0.2 0 0.2 0.4 0.1 0.2 0.3 0.1 0.4-0.2 1.8 0.3 0.4-0.1 0.6-0.3 0.5 0.4 0.1 0 0.9 0.3 0.3 0.4 0.5 0.9 0.3 0.4 2.5 1 1 0.8 0.3 0.3 0.2 0.6-0.2 0.4-0.8 0.4 0.4 0.5 0 0.7-0.1 0.7 0.1 0.6 0.9 0.8 0.3 0.5 0.2 0.7 0.6 0.7 4.5 1.4 1.2-0.3 0.7 0.2 0.9 0.8 0.5 0.5 0.6 1.3 0.5 0.4 1.3 0.2 0.5 0.3 0.2 0.6 0.2 1.5 0.2 0.5 0.2 0.4 0.1 0.4-0.1 0.6 0.8 1 0.4 0.4 1 0.6 0.3 0.4 0.3 0.6 0.4 0.5 0.6 0.3 2 0.4 0.2 0.2 0.5 0.4 0.2 0.2 1.1 0.3 0.4 0.1 0.1 0.4 0.1 0.3-0.1 0.4-0.1 0.4-1.4 1.8-0.2 0.8-0.1 1.7-0.1 0.8-0.5 1.7-0.2 0.8 0.1 0.7 0.4 0.8 0.9 1.2 0.5 0.5 0.6 0.4 0.5 0.1 1.1-0.3z" id="KAZ3201" name="West Kazakhstan"></path>
 		 	</a>
-		 	<a xlink:title="Akmola" xlink:href="">
+		 	<a xlink:title="Akmola" href="{% url 'akmola' %}">
 		 		<path d="M672.7 120.3l0.7 0.8 0.7 3.2 0.6 22.4-1.2 1.3-2.5 1.8-1.6 4.2 0 3.9 3-0.6 1.7 0.1 0.6 1.4 2.8 1 2.6 1.5-2 1.3-2.2 0.4-3.7 1.5-2.4 1.8-0.6 1.9-1.1 2.1-1.6 2-4.6-0.7-4.5 0.8-1.3-0.2-0.5 1.3 0.4 1 1.3 2.1 0.6 1.5-0.1 0.8 1.4-0.6 1.3-1.5 2.3 0.8 1.1 0.9-1.3 1.6-2.4 1.9-4.3 1.4-1.4 0.8 0.4 1.3-2.2 1.3-1.3 0.5-0.7 1-4.1-1-1.9 2.4-0.1 1.2-1.1 1.7-2 0.6-1 0-1 0.7-1.7 0.9-0.2 0.9 0.2 0.5-0.7 0.8 0.1 1.5 0.9 0.6-1.3 1.3-3-1.2-0.9 1.2-1.2 0.4-0.4 4-6.5-0.6-2.6 0.6-1.1 0.7-0.1-1.5 0.8-1.1 0.4-1.8 0.4-2.6-0.7-0.5 1.2-2.2-2.7-2.6-1.1 0-0.7-1-1.3 0.2-0.7-0.8-0.9-0.1-0.3 0.9-2.7 1.3-2.3 4.1-1.4 0.6-1 0.9-2.7 0.6-0.7 0.7 0.2 1.2-1 0.9-2.5 1.4-1.4 0.2-1 0.6-1 3.8-0.4 3.7-0.8-0.9-1.2-1.1-3.3 1.3-1.5 6.2-7.9 3.3-1-3 1.9-3.2-1.4-1.3-0.6-1.5-1.6-0.1-6.1 1.7-2.4 0.3-2-0.6 0.3-2.1-0.9-0.4-1.7-2.4-1.6 0.4-0.4-1.3-1.8 0.4-1.2 2.5-1.4 2.3-1.3 0-0.7-0.6 0.4 2.2-1.4 1-2.8 0.8-8.2-2.7 1.4-3.6 1.2-4.5 0.4-3.3 0.6-1.7 0.5-2.4 0.2-4.2-5.3-2.1-2.7 0.9-2.5 1.4-4.5 3-8.6 0.1 1 1.5 0.6 2.7-1.8 1.4-4 1.2-6.4 0.9-3.3 1.3-3.1 1.8-2.5-2-1.1-1.8 1.1-2 0-3-2.6-2.2-7.1 1.2-8.8-2.9-2.3-1.8-1.7-2.5-2.4 0.1-0.9-0.8-0.5-2.4-2.4-1.7-2.9 0.5-2.2 3.3-3.1 0.2-0.4-6.9-4.2-7.5 0.2-2.4-1-1.4 1.2-1.7 1.1-1 0.6-0.8-0.7-0.8 0.3-1.5 0.5-1.5 0.5-4.2-1.3-2.7-4-2.7 0.4-2.4 1.7 0.2 4.7-1.6 3.8-4.1 1-5.3 1.3-3.7 2-2.3 0.4-9 4.4 1.4 1.9 2.9 2.4-0.8 5.6-0.2 1.3 2.8 2.9 0.1 8.2 1.6 2.5-0.6 5-0.5 0.3-5.9 2.6-0.5 3.1 0.9 5.7 3.6 2.3 0.8 0.5-1.2 0-1.1 1.8-0.5 2.5-2.9-1.8-2.4-0.1-1.9 1.6-0.1 4.9-2.6 1.2 0.1 0.7-1.4 0.9-0.7 0.2-1.1 1-1.6 2.1-1.1 1.7-1.6 3-1.4-0.2-0.4-0.7-6.2 1.8-1.7 0.8-4.4-1.4-2.4-1.1-3-2.5-1.1-1.7-2-1.6-3.3 1.7-1.1 0.6-0.8 0.8-1 1.6-0.6-0.6-0.5-0.4-1.5 2.6-0.5 1.4-0.4-0.4-0.7-0.5-2.1 1.1 0 0.7-0.5 1.6-0.4 0.8 0.3 0.2 0.7 2 0.2 1.4-1 1.2-1.1 2.4 2 0.9 1.3 0.9 0.5 0.8 3.1 1.5-0.1 0.2-1.4-1.2-1.2 0.3-1.1 0.8-1.3 4-2.5 4.2-0.1 1.5 1 0.8 1.2 0.9 3.3 0.1 2.8 0.8-0.7 1.3 0.3 2.5 0 1 0.7-0.3 1.5-1 1.5-0.8 1.7 1.5 0.1 3.2-0.2 2.4 1.7 1.5 2.6 1.7 0.9 0.5-2.8 1.9-0.7 0.9-2.9 3.3-0.6 6.2-0.1 0.7 0.7 0.2 0.5 0 2.3 3.1 0.7 0.8 0.6 1.4 0.2 1.3-0.4 5.9-3.3 1.7 3 2.5 2.7 1.1 1.8-0.8 1.4-0.2 4.1-1.3 2.1 1.4 2.8 3.3 1.2 7.7 0.2 5-3.5 2-0.5 2.6 0.5 3-0.9 1.3-0.1 0.8-1 1.4 1.9 0 2.1 1.1 2.5 0.5 4.9 2.4 0.2 10.2 3.6 4.4 3.4 7.6 0.6z m-59.7 62.2l1.2-1.7 0.6-2.3 0.2-2.5-0.7-1.8-0.8-0.4-1.1-1.7-1.9-1.5-1.1-0.3-1.6 0.7-0.8 0.8-0.7 1.3-0.2 1.5 0.2 1.6 0.9 1.5 1.2 1.5 1.1 1.5 1 1.8 1.1 0.7 1.4-0.7z" id="KAZ3202" name="Aqmola"></path>
 		 	</a>
 		 	<a xlink:title="Karagandy" xlink:href="">
@@ -66,213 +144,568 @@
 		 <circle cx="287.9" cy="179.9" id="2">
 		 </circle>
 		 </svg>
+	</div>
+	<img src="{% static 'home/images/icons/star.svg' %}" class="star">
+	<div class="capital"><h5>NURSULTAN</h5><h6>Capital</h6></div>
 
+	<img src="{% static 'home/images/left.svg' %}" class="left">
+	<img src="{% static 'home/images/right.svg' %}" class="right">
+	<img src="{% static 'home/images/roadweb.svg' %}" class="roadweb">
+
+
+
+<!-- CITIES ON THE MAP -->
+	<img src="{% static 'home/images/icons/info.svg' %}" style="cursor:pointer"
+		 onclick="onClick(this)" class="akmolainfo" id="akmola">
+	<img src="{% static 'home/images/icons/info.svg' %}" style="cursor:pointer"
+		 onclick="onClick(this)" class="westinfo" id="west">
+	<img src="{% static 'home/images/icons/info.svg' %}" style="cursor:pointer"
+		 onclick="onClick(this)" class="atyrauinfo" id="atyrau">
+	<img src="{% static 'home/images/icons/info.svg' %}" style="cursor:pointer"
+		 onclick="onClick(this)" class="mangystauinfo" id="mangystau">
+	<img src="{% static 'home/images/icons/info.svg' %}" style="cursor:pointer"
+		 onclick="onClick(this)" class="aktobeinfo" id="aktobe">
+	<img src="{% static 'home/images/icons/info.svg' %}" style="cursor:pointer"
+		 onclick="onClick(this)" class="kostanayinfo" id="kostanay">
+	<img src="{% static 'home/images/icons/info.svg' %}" style="cursor:pointer"
+		 onclick="onClick(this)" class="qyzylordainfo" id="qyzylorda">
+	<img src="{% static 'home/images/icons/info.svg' %}" style="cursor:pointer"
+		 onclick="onClick(this)" class="northinfo" id="north">
+	<img src="{% static 'home/images/icons/info.svg' %}" style="cursor:pointer"
+		 onclick="onClick(this)" class="karagandyinfo" id="karagandy">
+	<img src="{% static 'home/images/icons/info.svg' %}" style="cursor:pointer"
+		 onclick="onClick(this)" class="turkestaninfo" id="turkestan">
+	<img src="{% static 'home/images/icons/info.svg' %}" style="cursor:pointer"
+		 onclick="onClick(this)" class="pavlodarinfo" id="pavlodar">
+	<img src="{% static 'home/images/icons/info.svg' %}" style="cursor:pointer"
+		 onclick="onClick(this)" class="eastinfo" id="east">
+	<img src="{% static 'home/images/icons/info.svg' %}" style="cursor:pointer"
+		 onclick="onClick(this)" class="almatyinfo" id="almaty">
+	<img src="{% static 'home/images/icons/info.svg' %}" style="cursor:pointer"
+		 onclick="onClick(this)" class="zhambylinfo" id="zhambyl">
+
+	<div class="city akmola" id="modalakmola">
+		<span class="close">&times;</span>
+				<div class="citem">
+					<div class="cimg"><img src="{% static 'home/images/akmola3.jpg' %}"></div>
+					<div class="cinfo">
+					<ul class="cul">
+						<li style="color:#386641"><b>AKMOLA</b></li>
+					</ul>
+					<ul class="cul">
+					  <li>Capital</li>
+					  <li>Population</li>
+					  <li>Area</li>
+					  <li>Kokshetau</li>
+					  <li>715,000</li>
+					  <li>146,219km2</li>
+					</ul>
+			  </div>
+				</div>
+				<div class="citem2">
+					<div class="ctour">
+						<a><b>Guided tour for Akmola</b></a>
+						<p>Burabay, Alzhir, Bayterek, ...</p>
+					</div>
+					<div class="cbuy">
+						<button>Book now</button>
+					</div>
+				</div>
+	</div>
+	<div class="city west" id="modalwest">
+		<span class="close">&times;</span>
+				<div class="citem">
+					<div class="cimg"><img src="{% static 'home/images/oral.jpg' %}"></div>
+					<div class="cinfo">
+					<ul class="cul">
+						<li style="color:#386641"><b>WEST KZ</b></li>
+					</ul>
+					<ul class="cul">
+					  <li>Capital</li>
+					  <li>Population</li>
+					  <li>Area</li>
+					  <li>Oral</li>
+					  <li>656,844</li>
+					  <li>151,339km2</li>
+					</ul>
+			  </div>
+				</div>
+				<div class="citem2">
+					<div class="ctour">
+						<a><b>Guided tour for West Kz</b></a>
+						<p>Burabay, Alzhir, Bayterek, ...</p>
+					</div>
+					<div class="cbuy">
+						<button>Book now</button>
+					</div>
+				</div>
+	</div>
+	<div class="city atyrau" id="modalatyrau">
+		<span class="close">&times;</span>
+				<div class="citem">
+					<div class="cimg"><img src="{% static 'home/images/atyrau.jpg' %}"></div>
+					<div class="cinfo">
+					<ul class="cul">
+						<li style="color:#386641"><b>ATYRAU</b></li>
+					</ul>
+					<ul class="cul">
+					  <li>Capital</li>
+					  <li>Population</li>
+					  <li>Area</li>
+					  <li>Atyrau</li>
+					  <li>556,388</li>
+					  <li>118,631km2</li>
+					</ul>
+			  </div>
+				</div>
+				<div class="citem2">
+					<div class="ctour">
+						<a><b>Guided tour for Atyrau</b></a>
+						<p>Burabay, Alzhir, Bayterek, ...</p>
+					</div>
+					<div class="cbuy">
+						<button>Book now</button>
+					</div>
+				</div>
+	</div>
+	<div class="city mangystau" id="modalmangystau">
+		<span class="close">&times;</span>
+				<div class="citem">
+					<div class="cimg"><img src="{% static 'home/images/mangystau.jpg' %}"></div>
+					<div class="cinfo">
+					<ul class="cul">
+						<li style="color:#386641"><b>MANGYSTAU</b></li>
+					</ul>
+					<ul class="cul">
+					  <li>Capital</li>
+					  <li>Population</li>
+					  <li>Area</li>
+					  <li>Aktau</li>
+					  <li>596,706</li>
+					  <li>165,642km2</li>
+					</ul>
+			  </div>
+				</div>
+				<div class="citem2">
+					<div class="ctour">
+						<a><b>Guided tour for Mangystau</b></a>
+						<p>Burabay, Alzhir, Bayterek, ...</p>
+					</div>
+					<div class="cbuy">
+						<button>Book now</button>
+					</div>
+				</div>
+	</div>
+	<div class="city aktobe" id="modalaktobe">
+		<span class="close">&times;</span>
+				<div class="citem">
+					<div class="cimg"><img src="{% static 'home/images/aktobe.jpg' %}"></div>
+					<div class="cinfo">
+					<ul class="cul">
+						<li style="color:#386641"><b>AKTOBE</b></li>
+					</ul>
+					<ul class="cul">
+					  <li>Capital</li>
+					  <li>Population</li>
+					  <li>Area</li>
+					  <li>Aktobe</li>
+					  <li>797,036</li>
+					  <li>300,629km2</li>
+					</ul>
+			  </div>
+				</div>
+				<div class="citem2">
+					<div class="ctour">
+						<a><b>Guided tour for Aktobe</b></a>
+						<p>Burabay, Alzhir, Bayterek, ...</p>
+					</div>
+					<div class="cbuy">
+						<button>Book now</button>
+					</div>
+				</div>
+	</div>
+	<div class="city kostanay" id="modalkostanay">
+		<span class="close">&times;</span>
+				<div class="citem">
+					<div class="cimg"><img src="{% static 'home/images/kostanay.jpg' %}"></div>
+					<div class="cinfo">
+					<ul class="cul">
+						<li style="color:#386641"><b>KOSTANAY</b></li>
+					</ul>
+					<ul class="cul">
+					  <li>Capital</li>
+					  <li>Population</li>
+					  <li>Area</li>
+					  <li>Kostanay</li>
+					  <li>882,961</li>
+					  <li>196,001km2</li>
+					</ul>
+			  </div>
+				</div>
+				<div class="citem2">
+					<div class="ctour">
+						<a><b>Guided tour for Aktobe</b></a>
+						<p>Burabay, Alzhir, Bayterek, ...</p>
+					</div>
+					<div class="cbuy">
+						<button>Book now</button>
+					</div>
+				</div>
+	</div>
+	<div class="city qyzylorda" id="modalqyzylorda">
+		<span class="close">&times;</span>
+				<div class="citem">
+					<div class="cimg"><img src="{% static 'home/images/kyzylorda.jpg' %}"></div>
+					<div class="cinfo">
+					<ul class="cul">
+						<li style="color:#386641"><b>KYZYLORDA</b></li>
+					</ul>
+					<ul class="cul">
+					  <li>Capital</li>
+					  <li>Population</li>
+					  <li>Area</li>
+					  <li>Kyzylorda</li>
+					  <li>799,533</li>
+					  <li>226,019km2</li>
+					</ul>
+			  </div>
+				</div>
+				<div class="citem2">
+					<div class="ctour">
+						<a><b>Guided tour for Kyzylorda</b></a>
+						<p>Burabay, Alzhir, Bayterek, ...</p>
+					</div>
+					<div class="cbuy">
+						<button>Book now</button>
+					</div>
+				</div>
+	</div>
+	<div class="city north" id="modalnorth">
+		<span class="close">&times;</span>
+				<div class="citem">
+					<div class="cimg"><img src="{% static 'home/images/north.jpg' %}"></div>
+					<div class="cinfo">
+					<ul class="cul">
+						<li style="color:#386641"><b>NORTH KZ</b></li>
+					</ul>
+					<ul class="cul">
+					  <li>Capital</li>
+					  <li>Population</li>
+					  <li>Area</li>
+					  <li>Petropavl</li>
+					  <li>579,403</li>
+					  <li>97,993km2</li>
+					</ul>
+			  </div>
+				</div>
+				<div class="citem2">
+					<div class="ctour">
+						<a><b>Guided tour for North KZ</b></a>
+						<p>Burabay, Alzhir, Bayterek, ...</p>
+					</div>
+					<div class="cbuy">
+						<button>Book now</button>
+					</div>
+				</div>
+	</div>
+	<div class="city karagandy" id="modalkaragandy">
+		<span class="close">&times;</span>
+				<div class="citem">
+					<div class="cimg"><img src="{% static 'home/images/karagandy.jpg' %}"></div>
+					<div class="cinfo">
+					<ul class="cul">
+						<li style="color:#386641"><b>KARAGANDY</b></li>
+					</ul>
+					<ul class="cul">
+					  <li>Capital</li>
+					  <li>Population</li>
+					  <li>Area</li>
+					  <li>Karagandy</li>
+					  <li>1,378,863</li>
+					  <li>427,982km2</li>
+					</ul>
+			  </div>
+				</div>
+				<div class="citem2">
+					<div class="ctour">
+						<a><b>Guided tour for Karagandy</b></a>
+						<p>Burabay, Alzhir, Bayterek, ...</p>
+					</div>
+					<div class="cbuy">
+						<button>Book now</button>
+					</div>
+				</div>
+	</div>
+	<div class="city turkestan" id="modalturkestan">
+		<span class="close">&times;</span>
+				<div class="citem">
+					<div class="cimg"><img src="{% static 'home/images/turkestan.jpg' %}"></div>
+					<div class="cinfo">
+					<ul class="cul">
+						<li style="color:#386641"><b>TURKESTAN</b></li>
+					</ul>
+					<ul class="cul">
+					  <li>Capital</li>
+					  <li>Population</li>
+					  <li>Area</li>
+					  <li>Turkestan</li>
+					  <li>2,016,037</li>
+					  <li>117,249km2</li>
+					</ul>
+			  </div>
+				</div>
+				<div class="citem2">
+					<div class="ctour">
+						<a><b>Guided tour for Turkestan</b></a>
+						<p>Burabay, Alzhir, Bayterek, ...</p>
+					</div>
+					<div class="cbuy">
+						<button>Book now</button>
+					</div>
+				</div>
+	</div>
+	<div class="city pavlodar" id="modalpavlodar">
+		<span class="close">&times;</span>
+				<div class="citem">
+					<div class="cimg"><img src="{% static 'home/images/pavlodar.jpg' %}"></div>
+					<div class="cinfo">
+					<ul class="cul">
+						<li style="color:#386641"><b>PAVLODAR</b></li>
+					</ul>
+					<ul class="cul">
+					  <li>Capital</li>
+					  <li>Population</li>
+					  <li>Area</li>
+					  <li>Pavlodar</li>
+					  <li>754,739</li>
+					  <li>124,800km2</li>
+					</ul>
+			  </div>
+				</div>
+				<div class="citem2">
+					<div class="ctour">
+						<a><b>Guided tour for Pavlodar</b></a>
+						<p>Burabay, Alzhir, Bayterek, ...</p>
+					</div>
+					<div class="cbuy">
+						<button>Book now</button>
+					</div>
+				</div>
+	</div>
+	<div class="city east" id="modaleast">
+		<span class="close">&times;</span>
+				<div class="citem">
+					<div class="cimg"><img src="{% static 'home/images/oskemen.jpg' %}"></div>
+					<div class="cinfo">
+					<ul class="cul">
+						<li style="color:#386641"><b>EAST KZ</b></li>
+					</ul>
+					<ul class="cul">
+					  <li>Capital</li>
+					  <li>Population</li>
+					  <li>Area</li>
+					  <li>Oskemen</li>
+					  <li>1,369,597</li>
+					  <li>283,226km2</li>
+					</ul>
+			  </div>
+				</div>
+				<div class="citem2">
+					<div class="ctour">
+						<a><b>Guided tour for East KZ</b></a>
+						<p>Burabay, Alzhir, Bayterek, ...</p>
+					</div>
+					<div class="cbuy">
+						<button>Book now</button>
+					</div>
+				</div>
+	</div>
+	<div class="city almaty" id="modalalmaty">
+		<span class="close">&times;</span>
+				<div class="citem">
+					<div class="cimg"><img src="{% static 'home/images/almaty.jpg' %}"></div>
+					<div class="cinfo">
+					<ul class="cul">
+						<li style="color:#386641"><b>ALMATY</b></li>
+					</ul>
+					<ul class="cul">
+					  <li>Capital</li>
+					  <li>Population</li>
+					  <li>Area</li>
+					  <li>Taldykorgan</li>
+					  <li>2,059,200</li>
+					  <li>223,911 km2</li>
+					</ul>
+			  </div>
+				</div>
+				<div class="citem2">
+					<div class="ctour">
+						<a><b>Guided tour for Almaty</b></a>
+						<p>Burabay, Alzhir, Bayterek, ...</p>
+					</div>
+					<div class="cbuy">
+						<button>Book now</button>
+					</div>
+				</div>
+	</div>
+	<div class="city zhambyl" id="modalzhambyl">
+		<span class="close">&times;</span>
+				<div class="citem">
+					<div class="cimg"><img src="{% static 'home/images/zhambyl.jpg' %}"></div>
+					<div class="cinfo">
+					<ul class="cul">
+						<li style="color:#386641"><b>ZHAMBYL</b></li>
+					</ul>
+					<ul class="cul">
+					  <li>Capital</li>
+					  <li>Population</li>
+					  <li>Area</li>
+					  <li>Taraz</li>
+					  <li>1,071,645</li>
+					  <li>144,264km2</li>
+					</ul>
+			  </div>
+				</div>
+				<div class="citem2">
+					<div class="ctour">
+						<a><b>Guided tour for Zhambyl</b></a>
+						<p>Burabay, Alzhir, Bayterek, ...</p>
+					</div>
+					<div class="cbuy">
+						<button>Book now</button>
+					</div>
+				</div>
 	</div>
 
+	<script>
+        var datamap = new Map([
+            [document.getElementById("akmola"), document.getElementById("modalakmola")],
+            [document.getElementById("west"), document.getElementById("modalwest")],
+            [document.getElementById("atyrau"), document.getElementById("modalatyrau")],
+            [document.getElementById("mangystau"), document.getElementById("modalmangystau")],
+            [document.getElementById("aktobe"), document.getElementById("modalaktobe")],
+            [document.getElementById("kostanay"), document.getElementById("modalkostanay")],
+            [document.getElementById("north"), document.getElementById("modalnorth")],
+            [document.getElementById("karagandy"), document.getElementById("modalkaragandy")],
+            [document.getElementById("turkestan"), document.getElementById("modalturkestan")],
+            [document.getElementById("pavlodar"), document.getElementById("modalpavlodar")],
+            [document.getElementById("east"), document.getElementById("modaleast")],
+            [document.getElementById("almaty"), document.getElementById("modalalmaty")],
+            [document.getElementById("qyzylorda"), document.getElementById("modalqyzylorda")],
+            [document.getElementById("zhambyl"), document.getElementById("modalzhambyl")]
+        ]);
 
-    <div class="album py-5 bg-light">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-                <img class="card-img-top" src="{% static 'home/images/Nur-Sultan.png' %}" alt="Card image cap">
-                <div class="card-body">
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Read more..</button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-                <img class="card-img-top" src="{% static 'home/images/Aktobe.png' %}" alt="Card image cap">
-                <div class="card-body">
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Read more..</button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-                <img class="card-img-top" src="{% static 'home/images/Almaty.png' %}" alt="Card image cap">
-                <div class="card-body">
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Read more..</button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                  </div>
-                </div>
-              </div>
-            </div>
+        datamap.forEach((value, key) => {
+            doModal(key, value);
+        });
 
-            <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-                <img class="card-img-top" src="{% static 'home/images/Atyrai.png' %}" alt="Card image cap">
-                <div class="card-body">
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Read more..</button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-                <img class="card-img-top" src="{% static 'home/images/Vostok.png' %}" alt="Card image cap">
-                <div class="card-body">
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Read more..</button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-                <img class="card-img-top" src="{% static 'home/images/Zhambyl.png' %}" alt="Card image cap">
-                <div class="card-body">
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Read more..</button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                  </div>
-                </div>
-              </div>
-            </div>
+        function doModal(anchor, popupbox) {
+            var span = popupbox.getElementsByClassName("close")[0];
 
-            <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-                <img class="card-img-top" src="{% static 'home/images/Karaganda.png' %}" alt="Card image cap">
-                <div class="card-body">
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Read more..</button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-                <img class="card-img-top" src="{% static 'home/images/Kostanay.png' %}" alt="Card image cap">
-                <div class="card-body">
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Read more..</button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-                <img class="card-img-top" src="{% static 'home/images/Kyzylorda.png' %}" alt="Card image cap">
-                <div class="card-body">
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Read more..</button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-              <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-                <img class="card-img-top" src="{% static 'home/images/Mangystau.png' %}" alt="Card image cap">
-                <div class="card-body">
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Read more..</button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-              <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-                <img class="card-img-top" src="{% static 'home/images/Sever.png' %}" alt="Card image cap">
-                <div class="card-body">
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Read more..</button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-              <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-                <img class="card-img-top" src="{% static 'home/images/Pavlodar.png' %}" alt="Card image cap">
-                <div class="card-body">
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Read more..</button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-              <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-                <img class="card-img-top" src="{% static 'home/images/Turkestan.png' %}" alt="Card image cap">
-                <div class="card-body">
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Read more..</button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-              <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-                <img class="card-img-top" src="{% static 'home/images/Zapad.png' %}" alt="Card image cap">
-                <div class="card-body">
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Read more..</button>
-                    </div>
-                    <small class="text-muted"></small>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+            anchor.addEventListener("click", function (event) {
+                popupbox.style.display = "block";
+            });
+
+            span.addEventListener("click", function (event) {
+                popupbox.style.display = "none";
+            });
+
+            window.addEventListener("click", function (event) {
+                if (event.target == popupbox) {
+                    popupbox.style.display = "none";
+                }
+            });
+        }
+    </script>
+
+
+	<h2 class="gridt">KAZAKHSTAN HAS 14 REGIONS</h2>
+	<div class="grid">
+        <div>
+			<h5 class="myfont">Akmola</h5>
+			<p class="myfont">Kokshetau</p>
+			<img class="before" src="{% static 'home/images/icons/Nur-Sultan1.png' %}" alt="">
+			<img class="after" src="{% static 'home/images/icons/Nur-Sultan2.png' %}"  alt="">
+		</div>
+		<div>
+			<h5 class="myfont">Aktobe</h5>
+			<p class="myfont">Aktobe</p>
+			<img class="before" src="{% static 'home/images/icons/Aktobe1.png' %}" alt="">
+			<img class="after" src="{% static 'home/images/icons/Aktobe2.png' %}"  alt="">
+		</div>
+		<div>
+			<h5 class="myfont">Almaty</h5>
+			<p class="myfont">Taldykorgan</p>
+			<img class="before" src="{% static 'home/images/icons/Almaty1.png' %}" alt="">
+			<img class="after" src="{% static 'home/images/icons/Almaty2.png' %}" alt="">
+		</div>
+		<div>
+			<h5 class="myfont">Atyrau</h5>
+			<p class="myfont">Atyrau</p>
+			<img class="before" src="{% static 'home/images/icons/Atyrau1.png' %}" alt="">
+			<img class="after" src="{% static 'home/images/icons/Atyrau2.png' %}" alt="">
+		</div>
+		<div>
+			<h5 class="myfont">East Kazakhstan</h5>
+			<p class="myfont">Oskemen</p>
+			<img class="before" src="{% static 'home/images/icons/Vostok1.png' %}" alt="">
+			<img class="after" src="{% static 'home/images/icons/Vostok2.png' %}" alt="">
+		</div>
+		<div>
+			<h5 class="myfont">Jambyl</h5>
+			<p class="myfont">Taraz</p>
+			<img class="before" src="{% static 'home/images/icons/Zhambyl1.png' %}" alt="">
+			<img class="after" src="{% static 'home/images/icons/Zhambyl2.png' %}" alt="">
+		</div>
+		<div>
+			<h5 class="myfont">Karagandy</h5>
+			<p class="myfont">Karagandy</p>
+			<img class="before" src="{% static 'home/images/icons/Karaganda1.png' %}" alt="">
+			<img class="after" src="{% static 'home/images/icons/Karaganda2.png' %}" alt="">
+		</div>
+		<div>
+			<h5 class="myfont">Kostanay</h5>
+			<p class="myfont">Kostanay</p>
+			<img class="before" src="{% static 'home/images/icons/Kostanay1.png' %}" alt="">
+			<img class="after" src="{% static 'home/images/icons/Kostanay2.png' %}" alt="">
+		</div>
+		<div>
+			<h5 class="myfont">Kyzylorda</h5>
+			<p class="myfont">Kyzylorda</p>
+			<img class="before" src="{% static 'home/images/icons/Kyzylorda1.png' %}" alt="">
+			<img class="after" src="{% static 'home/images/icons/Kyzylorda2.png' %}" alt="">
+		</div>
+		<div>
+			<h5 class="myfont">Mangystau</h5>
+			<p class="myfont">Aktau</p>
+			<img class="before" src="{% static 'home/images/icons/Mangystau1.png' %}" alt="">
+			<img class="after" src="{% static 'home/images/icons/Mangystau2.png' %}" alt="">
+		</div>
+		<div>
+			<h5 class="myfont">North Kazakhstan</h5>
+			<p class="myfont">Petropavl</p>
+			<img class="before" src="{% static 'home/images/icons/Sever1.png' %}" alt="">
+			<img class="after" src="{% static 'home/images/icons/Sever2.png' %}" alt="">
+		</div>
+		<div>
+			<h5 class="myfont">Pavlodar</h5>
+			<p class="myfont">Pavlodar</p>
+			<img class="before" src="{% static 'home/images/icons/Pavlodar1.png' %}" alt="">
+			<img class="after" src="{% static 'home/images/icons/Pavlodar2.png' %}" alt="">
+		</div>
+		<div>
+			<h5 class="myfont">Turkestan</h5>
+			<p class="myfont">Turkestan</p>
+			<img class="before" src="{% static 'home/images/icons/Turkestan1.png' %}" alt="">
+			<img class="after" src="{% static 'home/images/icons/Turkestan2.png' %}" alt="">
+		</div>
+		<div>
+			<h5 class="myfont">West Kazakhstan</h5>
+			<p class="myfont">Oral</p>
+			<img class="before" src="{% static 'home/images/icons/Zapad1.png' %}" alt="">
+			<img class="after" src="{% static 'home/images/icons/Zapad2.png' %}" alt="">
+		</div>
+	</div>
 
 {% endblock %}
+</div>

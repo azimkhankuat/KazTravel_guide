@@ -1,0 +1,53 @@
+body{
+    background-color: #F2E8CF;
+}
+
+.hedbg{
+    background-color: #386641;
+    position: relative;
+    z-index: 5;
+}
+
+.mybtn {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 4px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.login {
+  background-color: #386641;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 25px;
+}
+
+.login:hover {
+  background-color: #BC4749;
+  border: 2px solid #BC4749;
+  color: #fff;
+}
+
+.signup {
+  background-color: #BC4749;
+  color: #fff;
+  border: 2px solid #BC4749;
+  border-radius: 25px;
+}
+
+
+.foot{
+    padding-top: 16px;
+    background-color: #BC4749;
+    color: #fff;
+    height: 60px;
+}
+.foot img{
+    width: 25px;
+}

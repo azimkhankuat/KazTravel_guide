@@ -9,11 +9,11 @@
     {% for el in all_tours %}
         <div class="alert alert-warning mt-2">
             <h3>{{ el.title }}</h3>
-            <img src="{{ el.image }}" width="400px">
+            <img src="{{ el.image }}" style="width: 400px" alt="Image of the city">
             <h5>Type: {{ el.type }}</h5>
             <p><b>Description:</b> {{ el.desc }}</p>
             <p><b>Duration:</b> {{ el.duration }}</p>
-            <p><b>Price:</b> {{ el.price }}</p>
+            <p><b>Price:</b> {{ el.price }} $ per person</p>
             <p><b>Prices include:</b> {{ el.price_include }}</p>
             <button type="submit" class="btn btn-success">Add to Cart</button>
         </div>
