@@ -10,45 +10,333 @@
         <h2 class="myfont">AKMOLA, Kokshetau</h2>
         <h5 class="myfont">Have a nice trip</h5>
       </div>
+
     <div class="city_data">
-        <div>
-            <p>Time</p>
-            <a id="month">Month </a>
-            <a id="date">Date </a><a>,</a>
-            <a id="year">Year</a><br>
-            <p id="cityTime">Time</p>
-            <a id="weekday">Weekday</a>
-            <script>
-                var m = new Date();
-                var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-                document.getElementById("month").innerHTML = months[m.getMonth()];
+        <div></div>
 
-                var d = new Date();
-                document.getElementById("date").innerHTML = d.getDate();
+        <div class="city_data2">
+            <div>
+                <h5 style="color: #6A994E">Time</h5>
+                <a id="month">Month </a>
+                <a id="date">Date </a><a>,</a>
+                <a id="year">Year</a><br>
+                <p id="cityTime" style="font-size: 30px;">Time</p>
+                <a id="weekday">Weekday</a>
+                <script>
+                    var m = new Date();
+                    var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+                    document.getElementById("month").innerHTML = months[m.getMonth()];
 
-                var y = new Date();
-                document.getElementById("year").innerHTML = y.getFullYear();
+                    var d = new Date();
+                    document.getElementById("date").innerHTML = d.getDate();
 
-                var w = new Date();
-                var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-                document.getElementById("weekday").innerHTML = days[w.getDay()];
+                    var y = new Date();
+                    document.getElementById("year").innerHTML = y.getFullYear();
 
-                var getCityTime = function(){
-                    document.getElementById("cityTime").innerHTML = new Date().toLocaleString("en-US", {timeZone:
-                    'Asia/Almaty', timeStyle:'medium', hourCycle:'h23'});
-                }
-                getCityTime();
-                setInterval(getCityTime, 1000);
-            </script>
+                    var w = new Date();
+                    var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+                    document.getElementById("weekday").innerHTML = days[w.getDay()];
+
+                    var getCityTime = function(){
+                        document.getElementById("cityTime").innerHTML = new Date().toLocaleString("en-US", {timeZone:
+                        'Asia/Almaty', timeStyle:'medium', hourCycle:'h23'});
+                    }
+                    getCityTime();
+                    setInterval(getCityTime, 1000);
+                </script>
+            </div>
+            <div>
+                <h5 style="color: #6A994E">Weather</h5>
+                <img src="http://openweathermap.org/img/w/{{ city_weather.icon }}.png" alt="Image">
+                <ul>
+                    <li>{{ city_weather.temperature }}° C</li>
+                    <li>{{ city_weather.description }}</li>
+                </ul>
+            </div>
+            <div class="bron">
+                <div style="float: left; padding-top: 10px; height: 10px">
+                    <p>I'm alone</p>
+                    <p>We are</p>
+                    <p>With</p>
+                    <p>And we need</p>
+                </div>
+                <div class="counters">
+                    <div style="background: #fff"></div>
+                    <div>
+                        <div class="quantity">
+                            <button class="btn minus-btn disabled" type="button">-</button>
+                            <input type="text" id="quantity" value="1">
+                            <button class="btn plus-btn" type="button">+</button>
+                        </div>
+
+                        <script>
+                            document.querySelector(".minus-btn").setAttribute("disabled", "disabled");
+                            var adultCount
+                            document.querySelector(".plus-btn").addEventListener("click", function() {
+                                adultCount = document.getElementById("quantity").value;
+                                adultCount++;
+                                document.getElementById("quantity").value = adultCount;
+                                if (adultCount > 1) {
+                                    document.querySelector(".minus-btn").removeAttribute("disabled");
+                                    document.querySelector(".minus-btn").classList.remove("disabled")
+                                }
+
+                                })
+                                document.querySelector(".minus-btn").addEventListener("click", function() {
+                                    adultCount = document.getElementById("quantity").value;
+                                    adultCount--;
+                                    document.getElementById("quantity").value = adultCount
+                                    if (adultCount == 1) {
+                                        document.querySelector(".minus-btn").setAttribute("disabled", "disabled")
+                                    }
+                                })
+                            </script>
+                    </div>
+                    <div>
+                        <div class="quantity">
+                            <button class="btn minus-btn2 disabled" type="button">-</button>
+                            <input type="text" id="quantity2" value="1">
+                            <button class="btn plus-btn2" type="button">+</button>
+                        </div>
+
+                        <script>
+                            document.querySelector(".minus-btn2").setAttribute("disabled", "disabled");
+                            var childCount
+                            document.querySelector(".plus-btn2").addEventListener("click", function() {
+                                childCount = document.getElementById("quantity2").value;
+                                childCount++;
+                                document.getElementById("quantity2").value = childCount;
+                                if (childCount > 1) {
+                                    document.querySelector(".minus-btn2").removeAttribute("disabled");
+                                    document.querySelector(".minus-btn2").classList.remove("disabled")
+                                }
+                            })
+                            document.querySelector(".minus-btn2").addEventListener("click", function() {
+                                childCount = document.getElementById("quantity2").value;
+                                childCount--;
+                                document.getElementById("quantity2").value = childCount
+                                if (childCount == 1) {
+                                    document.querySelector(".minus-btn2").setAttribute("disabled", "disabled")
+                                }
+                            })
+                        </script>
+                    </div>
+                    <div>
+                        <div class="quantity">
+                            <button class="btn minus-btn3 disabled" type="button">-</button>
+                            <input type="text" id="quantity3" value="1">
+                            <button class="btn plus-btn3" type="button">+</button>
+                        </div>
+
+                        <script>
+                            document.querySelector(".minus-btn3").setAttribute("disabled", "disabled");
+                            var roomCount
+                            document.querySelector(".plus-btn3").addEventListener("click", function() {
+                                roomCount = document.getElementById("quantity3").value;
+                                roomCount++;
+                                document.getElementById("quantity3").value = roomCount;
+                                if (roomCount > 1) {
+                                    document.querySelector(".minus-btn3").removeAttribute("disabled");
+                                    document.querySelector(".minus-btn3").classList.remove("disabled")
+                                }
+
+                            })
+                            document.querySelector(".minus-btn3").addEventListener("click", function() {
+                                roomCount = document.getElementById("quantity3").value;
+                                roomCount--;
+                                document.getElementById("quantity3").value = roomCount
+                                if (roomCount == 1) {
+                                    document.querySelector(".minus-btn3").setAttribute("disabled", "disabled")
+                                }
+                            })
+                        </script>
+                    </div>
+                </div>
+                <div style="float: right; padding-top: 15px;">
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                    <p>adults</p>
+                    <p>children</p>
+                    <p>rooms</p>
+                </div>
+            </div>
         </div>
-        <div>
-            <img src="http://openweathermap.org/img/w/{{ city_weather.icon }}.png" alt="Image">
-            <ul>
-                <li>{{ city_weather.temperature }}° C</li>
-                <li>{{ city_weather.description }}</li>
-            </ul>
-        </div>
+        <div></div>
     </div>
+
+    <h2 class="gridt">ATTRACTIONS</h2>
+        <div class="slideshow-container">
+            <div class="mySlides">
+                <div class="cards">
+                    <div class="card1">
+                        <img src="{% static 'home/images/akmola1.jpg' %}">
+                        <h5 class="myfont">Okzhetpes</h5>
+			            <p class="myfont">Kokshetau</p>
+                    </div>
+                    <div class="card1">
+                        <img src="{% static 'home/images/akmola2.jpg' %}">
+                        <h5 class="myfont">Zhumbaktas</h5>
+			            <p class="myfont">Kokshetau</p>
+                    </div>
+                    <div class="card1">
+                        <img src="{% static 'home/images/akmola3.jpg' %}">
+                        <h5 class="myfont">Baiterek</h5>
+			            <p class="myfont">Nur-Sultan</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mySlides">
+                <div class="cards">
+                    <div class="card1">
+                        <img src="{% static 'home/images/akmola4.jpg' %}">
+                        <h5 class="myfont">Khan-Shatyr</h5>
+			            <p class="myfont">Nur-Sultan</p>
+                    </div>
+                    <div class="card1">
+                        <img src="{% static 'home/images/akmola5.jpg' %}">
+                        <h5 class="myfont">Ak-Meshit</h5>
+			            <p class="myfont">Nur-Sultan</p>
+                    </div>
+                    <div class="card1">
+                        <img src="{% static 'home/images/akmola6.jpg' %}">
+                        <h5 class="myfont">Alzhir</h5>
+			            <p class="myfont">Kokshetau</p>
+                    </div>
+                </div>
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+
+        <script>
+            var slideIndex = 1;
+            showSlides(slideIndex);
+
+            function plusSlides(n) {
+              showSlides(slideIndex += n);
+            }
+
+            function currentSlide(n) {
+              showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+              var i;
+              var slides = document.getElementsByClassName("mySlides");
+
+              if (n > slides.length) {slideIndex = 1}
+              if (n < 1) {slideIndex = slides.length}
+              for (i = 0; i < slides.length; i++) {
+                  slides[i].style.display = "none";
+              }
+              slides[slideIndex-1].style.display = "block";
+            }
+        </script>
+
+    <h2 class="gridt">HOTELS</h2>
+        <div class="slideshow-container">
+            <div class="mySlides2">
+                <div class="cards">
+                    <div class="card1">
+                        <img src="{% static 'home/images/1hot1.jpg' %}">
+                        <h5 class="myfont">Hilton</h5>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+			            <p class="myfont">Nur-Sultan</p>
+                    </div>
+                    <div class="card1">
+                        <img src="{% static 'home/images/1hot2.jpg' %}">
+                        <h5 class="myfont">Hilton</h5>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+			            <p class="myfont">Nur-Sultan</p>
+                    </div>
+                    <div class="card1">
+                        <img src="{% static 'home/images/1hot3.jpg' %}">
+                        <h5 class="myfont">Hilton</h5>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+			            <p class="myfont">Nur-Sultan</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mySlides2">
+                <div class="cards">
+                    <div class="card1">
+                        <img src="{% static 'home/images/1hot4.jpg' %}">
+                        <h5 class="myfont">Hilton</h5>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+			            <p class="myfont">Nur-Sultan</p>
+                    </div>
+                    <div class="card1">
+                        <img src="{% static 'home/images/1hot5.jpg' %}">
+                        <h5 class="myfont">Hilton</h5>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+			            <p class="myfont">Nur-Sultan</p>
+                    </div>
+                    <div class="card1">
+                        <img src="{% static 'home/images/1hot6.jpg' %}">
+                        <h5 class="myfont">Hilton</h5>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+			            <p class="myfont">Nur-Sultan</p>
+                    </div>
+                </div>
+            </div>
+
+            <a class="prev" onclick="plusSlidesa(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlidesa(1)">&#10095;</a>
+            </div>
+
+        <script>
+            var slideIndexa = 1;
+            showSlidesa(slideIndexa);
+
+            function plusSlidesa(m) {
+              showSlidesa(slideIndexa += m);
+            }
+
+            function currentSlida2(m) {
+              showSlidesa(slideIndexa = m);
+            }
+
+            function showSlidesa(m) {
+              var o;
+              var slides2 = document.getElementsByClassName("mySlides2");
+
+              if (m > slides2.length) {slideIndexa = 1}
+              if (m < 1) {slideIndexa = slides2.length}
+              for (o = 0; o < slides2.length; o++) {
+                  slides2[o].style.display = "none";
+              }
+              slides2[(slideIndexa)-1].style.display = "block";
+            }
+    </script>
 
 
 {% endblock %}
