@@ -5,17 +5,22 @@
 {% endblock %}
 
 {% block content %}
-    <h1 style="text-align: center">Tours</h1>
-    {% for el in all_tours %}
-        <div class="alert alert-warning mt-2">
-            <h3>{{ el.title }}</h3>
-            <img src="{{ el.image }}" style="width: 400px" alt="Image of the city">
-            <p><b>Category:</b> {{ el.category }}</p>
-            <p><b>Description:</b> {{ el.description }}</p>
-            <p><b>Duration:</b> {{ el.duration }}</p>
-            <p><b>Price:</b> {{ el.price }} $ per person</p>
-            <p><b>Prices include:</b> {{ el.price_include }}</p>
-            <button type="submit" class="btn btn-success">Add to Cart</button>
+    <div class="container">
+    <h3>All Tours</h3><hr>
+    {% for cat in allcategories %}
+    <h4>{{cat.title}}</h4><hr>
+    <div class="row">
+        {% for p in cat.kaztour_set.all %}
+        <div class="col-md-3">
+            <div class="m-4">
+                <h4><a href="{% url 'tourdetails' p.slug %}">{{p.title}}</a></h4>
+                <img src="{{p.image}}" alt="" class="img-fluid" style="object-fit: cover;">
+                <p class="mt-3">Price: {{p.price}} $ per person</p>
+                <a href="" class="btn btn-primary">Add To Cart</a>
+            </div>
         </div>
+        {% endfor %}
+    </div>
     {% endfor %}
+</div>
 {% endblock %}

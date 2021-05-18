@@ -1,10 +1,9 @@
 import requests
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.views.generic import TemplateView
 
-
-# Create your views here.
-from main.models import KazTour
+from main.models import KazTour, Category
 
 
 def index(request):
@@ -15,9 +14,26 @@ def about(request):
     return render(request, "main/about.html")
 
 
-def tours(request):
-    all_tours = KazTour.objects.all()
-    return render(request, "main/tours.html", {'all_tours': all_tours})
+class AllToursView(TemplateView):
+    template_name = "main/tours.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['allcategories'] = Category.objects.all()
+        return context
+
+
+class TourDetailView(TemplateView):
+    template_name = "main/tour_details.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        url_slug = self.kwargs['slug']
+        product = KazTour.objects.get(slug=url_slug)
+        product.view_count += 1
+        product.save()
+        context['product'] = product
+        return context
 
 
 def profile(request):

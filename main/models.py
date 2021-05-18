@@ -14,6 +14,7 @@ class KazTour(models.Model):
     title = models.CharField(max_length=200)
     slug = models.SlugField(unique=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    category_slug = models.TextField()
     image = models.TextField()
     price = models.PositiveIntegerField()
     duration = models.TextField('Duration of the tour')
