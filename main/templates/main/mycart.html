@@ -39,7 +39,7 @@
                         <th colspan="4" class="text-right">Total</th>
                         <th>Rs. {{cart.total}}</th>
                         {% if cart.tourcartproduct_set.all %}
-                        <th><a href="">Empty Cart</a></th>
+                        <th><a href="{% url 'emptycart' %}">Empty Cart</a></th>
                         {% endif %}
                     </tr>
                     {% if cart.tourcartproduct_set.all %}

@@ -10,6 +10,7 @@ urlpatterns = [
     path("add-to-cart-<int:pro_id>/", AddToCartView.as_view(), name="addtocart"),
     path("my-cart/", MyCartView.as_view(), name="mycart"),
     path("manage-cart/<int:cp_id>/", ManageCartView.as_view(), name="managecart"),
+    path("empty-cart/", EmptyCartView.as_view(), name="emptycart"),
     path('profile', views.profile, name="profile"),
     path('akmola', views.akmola, name="akmola"),
     path('aktobe', views.aktobe, name="aktobe")

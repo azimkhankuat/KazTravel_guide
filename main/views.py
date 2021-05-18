@@ -125,6 +125,17 @@ class ManageCartView(View):
         return redirect("mycart")
 
 
+class EmptyCartView(View):
+    def get(self, request, *args, **kwargs):
+        cart_id = request.session.get("cart_id", None)
+        if cart_id:
+            cart = TourCart.objects.get(id=cart_id)
+            cart.tourcartproduct_set.all().delete()
+            cart.total = 0
+            cart.save()
+        return redirect("mycart")
+
+
 def profile(request):
     return render(request, "main/profile.html")
 
