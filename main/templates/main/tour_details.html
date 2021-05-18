@@ -15,7 +15,7 @@
             <h4>{{product.title}} (Viewed {{product.view_count}} times)</h4>
             <h5>Category: {{product.category}}</h5>
             <h5>Price: {{product.price}} $ per person</h5>
-            <a href="" class="btn btn-info">Add To Cart</a>
+            <a href="{% url 'addtocart' product.id %}" class="btn btn-info">Add To Cart</a>
             <hr>
             <p>{{product.description}}</p>
         </div>

@@ -16,7 +16,7 @@
                 <h4><a href="{% url 'tourdetails' p.slug %}">{{p.title}}</a></h4>
                 <img src="{{p.image}}" alt="" class="img-fluid" style="object-fit: cover;">
                 <p class="mt-3">Price: {{p.price}} $ per person</p>
-                <a href="" class="btn btn-primary">Add To Cart</a>
+                <a href="{% url 'addtocart' p.id %}" class="btn btn-primary">Add To Cart</a>
             </div>
         </div>
         {% endfor %}
