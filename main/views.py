@@ -1,9 +1,11 @@
 import requests
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from django.urls import reverse_lazy, reverse
 from django.views import View
-from django.views.generic import TemplateView
+from django.views.generic import View, TemplateView, CreateView, FormView, DetailView, ListView
 
+from main.forms import CheckoutForm
 from main.models import *
 
 
@@ -136,12 +138,44 @@ class EmptyCartView(View):
         return redirect("mycart")
 
 
-def profile(request):
-    return render(request, "main/profile.html")
+class CheckoutView(CreateView):
+    template_name = "main/checkout.html"
+    form_class = CheckoutForm
+    success_url = reverse_lazy("tours")
+
+    def dispatch(self, request, *args, **kwargs):
+        if request.user.is_authenticated:
+            pass
+        else:
+            return redirect("/login/?next=/checkout/")
+        return super().dispatch(request, *args, **kwargs)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        cart_id = self.request.session.get("cart_id", None)
+        if cart_id:
+            cart_obj = TourCart.objects.get(id=cart_id)
+        else:
+            cart_obj = None
+        context['cart'] = cart_obj
+        return context
+
+    def form_valid(self, form):
+        cart_id = self.request.session.get("cart_id")
+        if cart_id:
+            cart_obj = TourCart.objects.get(id=cart_id)
+            form.instance.cart = cart_obj
+            form.instance.subtotal = cart_obj.total
+            form.instance.total = cart_obj.total
+            form.instance.order_status = "Order Received"
+            del self.request.session['cart_id']
+        else:
+            return redirect("tours")
+        return super().form_valid(form)
 
 
 def akmola(request):
-    url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid=78188f6bb68d92e1918239bccf8980ac'
+    url = 'https://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid=78188f6bb68d92e1918239bccf8980ac'
     city = 'Kokshetau'
 
     r = requests.get(url.format(city)).json()
@@ -156,8 +190,43 @@ def akmola(request):
     return render(request, "main/akmola.html", {'city_weather': city_weather})
 
 
+class CustomerProfileView(TemplateView):
+    template_name = "main/customerprofile.html"
+
+    def dispatch(self, request, *args, **kwargs):
+        if request.user.is_authenticated:
+            pass
+        else:
+            return redirect("/login/?next=/profile/")
+        return super().dispatch(request, *args, **kwargs)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        customer = self.request.user
+        context['customer'] = customer
+        orders = Order.objects.filter(cart__customer=customer).order_by("-id")
+        context["orders"] = orders
+        return context
+
+
+class CustomerOrderDetailView(DetailView):
+    template_name = "main/customerorderdetail.html"
+    model = Order
+    context_object_name = "ord_obj"
+
+    def dispatch(self, request, *args, **kwargs):
+        if request.user.is_authenticated:
+            order_id = self.kwargs["pk"]
+            order = Order.objects.get(id=order_id)
+            if request.user != order.cart.customer:
+                return redirect("customerprofile")
+        else:
+            return redirect("/login/?next=/profile/")
+        return super().dispatch(request, *args, **kwargs)
+
+
 def aktobe(request):
-    url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid=78188f6bb68d92e1918239bccf8980ac'
+    url = 'https://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid=78188f6bb68d92e1918239bccf8980ac'
     city = 'Aktobe'
 
     r = requests.get(url.format(city)).json()

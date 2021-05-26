@@ -11,7 +11,9 @@ urlpatterns = [
     path("my-cart/", MyCartView.as_view(), name="mycart"),
     path("manage-cart/<int:cp_id>/", ManageCartView.as_view(), name="managecart"),
     path("empty-cart/", EmptyCartView.as_view(), name="emptycart"),
-    path('profile', views.profile, name="profile"),
+    path("checkout/", CheckoutView.as_view(), name="checkout"),
+    path("profile/", CustomerProfileView.as_view(), name="customerprofile"),
+    path("profile/order-<int:pk>/", CustomerOrderDetailView.as_view(), name="customerorderdetail"),
     path('akmola', views.akmola, name="akmola"),
     path('aktobe', views.aktobe, name="aktobe")
 ]
