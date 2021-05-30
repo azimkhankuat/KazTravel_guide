@@ -174,22 +174,6 @@ class CheckoutView(CreateView):
         return super().form_valid(form)
 
 
-def akmola(request):
-    url = 'https://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid=78188f6bb68d92e1918239bccf8980ac'
-    city = 'Kokshetau'
-
-    r = requests.get(url.format(city)).json()
-
-    city_weather = {
-        'city': city,
-        'temperature': r['main']['temp'],
-        'description': r['weather'][0]['description'],
-        'icon': r['weather'][0]['icon']
-    }
-    print(city_weather)
-    return render(request, "main/akmola.html", {'city_weather': city_weather})
-
-
 class CustomerProfileView(TemplateView):
     template_name = "main/customerprofile.html"
 
@@ -223,6 +207,22 @@ class CustomerOrderDetailView(DetailView):
         else:
             return redirect("/login/?next=/profile/")
         return super().dispatch(request, *args, **kwargs)
+
+
+def akmola(request):
+    url = 'https://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid=78188f6bb68d92e1918239bccf8980ac'
+    city = 'Kokshetau'
+
+    r = requests.get(url.format(city)).json()
+
+    city_weather = {
+        'city': city,
+        'temperature': r['main']['temp'],
+        'description': r['weather'][0]['description'],
+        'icon': r['weather'][0]['icon']
+    }
+    print(city_weather)
+    return render(request, "main/akmola.html", {'city_weather': city_weather})
 
 
 def aktobe(request):
