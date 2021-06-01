@@ -39,7 +39,18 @@ class TourDetailView(TemplateView):
         return context
 
 
-class AddToCartView(TemplateView):
+class CheckUser(object):
+    def dispatch(self, request, *args, **kwargs):
+        cart_id = request.session.get("cart_id")
+        if cart_id:
+            cart_obj = TourCart.objects.get(id=cart_id)
+            if request.user.is_authenticated and request.user:
+                cart_obj.customer = request.user
+                cart_obj.save()
+        return super().dispatch(request, *args, **kwargs)
+
+
+class AddToCartView(CheckUser, TemplateView):
     template_name = "main/addtocart.html"
 
     def get_context_data(self, **kwargs):
@@ -82,7 +93,7 @@ class AddToCartView(TemplateView):
         return context
 
 
-class MyCartView(TemplateView):
+class MyCartView(CheckUser, TemplateView):
     template_name = "main/mycart.html"
 
     def get_context_data(self, **kwargs):
@@ -96,7 +107,7 @@ class MyCartView(TemplateView):
         return context
 
 
-class ManageCartView(View):
+class ManageCartView(CheckUser, View):
     def get(self, request, *args, **kwargs):
         cp_id = self.kwargs["cp_id"]
         action = request.GET.get("action")
@@ -127,7 +138,7 @@ class ManageCartView(View):
         return redirect("mycart")
 
 
-class EmptyCartView(View):
+class EmptyCartView(CheckUser, View):
     def get(self, request, *args, **kwargs):
         cart_id = request.session.get("cart_id", None)
         if cart_id:
@@ -138,7 +149,7 @@ class EmptyCartView(View):
         return redirect("mycart")
 
 
-class CheckoutView(CreateView):
+class CheckoutView(CheckUser, CreateView):
     template_name = "main/checkout.html"
     form_class = CheckoutForm
     success_url = reverse_lazy("tours")
@@ -169,16 +180,17 @@ class CheckoutView(CreateView):
             form.instance.total = cart_obj.total
             form.instance.order_status = "Order Received"
             del self.request.session['cart_id']
+            order = form.save()
         else:
             return redirect("tours")
         return super().form_valid(form)
 
 
-class CustomerProfileView(TemplateView):
+class CustomerProfileView(CheckUser, TemplateView):
     template_name = "main/customerprofile.html"
 
     def dispatch(self, request, *args, **kwargs):
-        if request.user.is_authenticated:
+        if request.user.is_authenticated and request.user:
             pass
         else:
             return redirect("/login/?next=/profile/")
@@ -193,7 +205,7 @@ class CustomerProfileView(TemplateView):
         return context
 
 
-class CustomerOrderDetailView(DetailView):
+class CustomerOrderDetailView(CheckUser, DetailView):
     template_name = "main/customerorderdetail.html"
     model = Order
     context_object_name = "ord_obj"
