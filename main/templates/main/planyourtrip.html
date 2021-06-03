@@ -1,0 +1,210 @@
+{% extends 'main/base.html' %}
+
+{% load static  %}
+{% block title %}
+    KazTravel - Homepage
+{% endblock %}
+{% block language %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+{% endblock %}
+
+{% block style %}
+    #language {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    #language th{
+        text-align: center;
+    }
+
+    #language td, #language th {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+
+    #language tr:nth-child(even){background-color: #f2f2f2;}
+
+    #language th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: #04AA6D;
+      color: white;
+    }
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h2>Plan your trip</h2><hr>
+
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#home">Kazakhstan</a></li>
+    <li><a data-toggle="tab" href="#menu1">Time zones</a></li>
+    <li><a data-toggle="tab" href="#menu2">Languages</a></li>
+    <li><a data-toggle="tab" href="#menu3">Menu 3</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+      <h3>Why Kazakhstan?</h3>
+        <article class="content-article">
+            <p>In our globalized era, when travel destinations are becoming increasingly similar, many travelers are looking for something authentic and unusual. Kazakhstan, with its unique culture, rich history and vast unexplored areas, is definitely worth discovering.</p>
+            <p>The nature of Kazakhstan is striking in its diversity and splendor. Towering mountain ranges, vast flat steppes, green valleys, sprawling deserts, deep canyons, and turquoise lakes – Kazakhstan has everything to stun even the most experienced traveler. Nowadays, when there are fewer and fewer areas of pristine nature in the world, Kazakhstan boasts an abundance of natural beauty. From time immemorial, our ancestral nomads lived in connection with nature, treating it with care and ensuring sustainability.</p>
+            <p><img src="https://www.tourasia.kz/wp-content/uploads/semirechie.jpg"></p><p>Another thing Kazakhstan is proud of is its cultural diversity. People of many nationalities call Kazakhstan their home, having created a unique cultural mosaic here. At the same time Kazakhs cherish their nomadic past, unique traditions, and customs, and pass them from generation to generation.</p>
+            <p>While the country is young, having gained independence in 1991 after the dissolution of the USSR, the history of Kazakhstan dates back centuries. Travelers will marvel at medieval underground mosques, mausoleums, and ancient burial mounds. Those interested in the Soviet Era will be delighted to see amazing examples of Stalinist architecture as well.</p>
+            <p><img src="https://exporteram.com/wp-content/uploads/2020/02/Astana.jpg"><br></p>
+            <p>With such a rich past, Kazakhstan’s present is no less intriguing. Nur-Sultan, the country’s new capital, is known for its bold, futuristic architecture. Meanwhile, the mountainous city of Almaty encompasses green alleys, fountains, museums, bazaars, and even the world’s highest-altitude skating rink.</p><p>However, Kazakhstan’s main treasure is its people. Hospitality is a feature of Kazakhs’ national character and you'll definitely feel genuinely welcomed here.<br></p>
+            <img src="https://lp-cms-production.imgix.net/image_browser/Almaty_skyline_G.jpg">
+            <p>Visit our amazing country and have a chance to learn our ancient traditions, admire our breathtaking landscapes and immerse yourself in our nomadic culture. Immersing yourself  won’t be difficult since Kazakhstan has everything needed for a truly authentic experience. Moreover, we believe that all travelers are nomads in a certain sense; don't you agree? Reveal your inner nomad in the motherland of true nomads!</p>
+        </article>
+    </div>
+    <div id="menu1" class="tab-pane fade">
+      <h3>Time zones</h3>
+      <div class="help">
+          <h1 class="content-title content-title--bounded">Time zones of Kazakhstan</h1>
+          <div class="container--narrow">
+              <article class="content-article">
+                  <p>The territory of the Republic of Kazakhstan is divided into two time zones – UTC+5 and UTC+6, although, in fact, geographically it occupies four time zones: UTC+3, UTC+4, UTC+5, UTC+6.</p>
+                  <p>Transitions to summer time was cancelled in 2005, so Kazakhstan does not observe daylight saving time.</p>
+                  <h4>Time difference with neighbouring countries</h4>
+                  <p>Russia:</p>
+                  <ul>
+                      <li>-1 hour – for the border between the Western Kazakhstan, Atyrau provinces and Saratov, Astrakhan provinces (time of Samara city); and for the border between Kostanay,&nbsp; Northern Kazakhstan, Pavlodar provinces and Chelyabinsk, Kurgan, Tyumen provinces (time of Yekaterinburg)</li>
+                      <li>0 hours – for the border between Aktobe province and Orenburg province (time of Yekaterinburg); and for the border between Pavlodar province and Omsk province (time of Omsk)</li>
+                      <li>+1 hour – for the border between Pavlodar, Eastern Kazakhstan provinces and Altai Krai, the Altai Republic (time of Krasnoyarsk)</li>
+                  </ul>
+                  <p>Turkmenistan:</p>
+                  <ul>
+                      <li>0 hours – for the border between Mangistau and Aktobe provinces</li>
+                      <li>&nbsp;-1 hour – for the rest of border territories</li>
+                  </ul><p>Kyrgyzstan: </p>
+                  <ul>
+                      <li>0 hours</li>
+                  </ul>
+                  <p>China: </p>
+                  <ul>
+                      <li>+2 hours</li>
+                  </ul>
+                  <p><img src="https://upload.wikimedia.org/wikipedia/commons/4/45/%D0%A7%D0%B0%D1%81%D0%BE%D0%B2%D1%8B%D0%B5_%D0%BF%D0%BE%D1%8F%D1%81%D0%B0_%D0%B2_%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD%D0%B5.svg" data-filename="" style="width: 970px;"><br></p>
+</article></div></div>
+    </div>
+    <div id="menu2" class="tab-pane fade">
+      <h3>Languages in Kazakhstan</h3>
+      <p>The official language of Kazakhstan is Kazakh. Russian language is also used in state organizations and local governments, along with Kazakh.</p>
+      <p>80-90% of the population is fluent in Russian. Basically all employees in travel agencies, hotels, restaurants and shops in large cities can speak English.</p>
+      <p>In remote regions, it is best for foreign guests to have an English-Kazakh-Russian phrasebook. Below you can find a mini-phrasebook with some necessary words. In addition, feel free to use Google Translate and other online translation services. If the necessary language packs are available for download, we recommend that you download them in advance to use the translator offline, as in remote places there may be problems with access to the Internet.</p>
+      <p>Useful phrases in Russian and Kazakh:</p>
+      <table id="language">
+          <tr>
+              <th>English</th>
+              <th>Russian</th>
+              <th>Kazakh</th>
+          </tr>
+          <tr>
+              <td>Hello!</td>
+              <td>Здравствуйте! (ZDRAHST-vooy-tyeh)</td>
+              <td>Сәлеметсіз бе? (sah-le-MET-siz beh?)</td>
+          </tr>
+          <tr>
+              <td>Hi!</td>
+              <td>Привет! (pree-VYET)</td>
+              <td>Сәлем (sah-LEM)</td>
+          </tr>
+          <tr>
+              <td>Goodbye!</td>
+              <td>До свидания! (duh svee-DAH-nyah)</td>
+              <td>Сау болыңыз! (SAH-w bo-ly-NGYZ)</td>
+          </tr>
+          <tr>
+              <td>My name is…</td>
+              <td>Меня зовут ... (mee-NYAH zah-VOOT…)</td>
+              <td>Менің атым ... (me-NING ah-TYM…)</td>
+          </tr>
+          <tr>
+              <td>I’m a tourist/We’re tourists</td>
+              <td>Я турист / Мы туристы (yah too-RIST/myh too-RIS-tyh)</td>
+              <td>Мен туристпін / Біз туристпіз (men too-RIST-pin/byz too-RIST-piz)</td>
+          </tr>
+          <tr>
+              <td>I’m from Great Britain/We’re from Great Britain</td>
+              <td>Я приехал (-а) из Великобритании / Мы приехали из Великобритании
+
+(ya pree-YE-khal(-ah) eez vye-lee-kuh-bree-TAH-nee-ee/myh pree-YE-kha-lee eez vye-lee-kuh-bree-TAH-nee-ee)</td>
+              <td>Мен Ұлыбританиядан келдім / Біз Ұлыбританиядан келдік
+
+(men oo-lyh-bree-TAH-nee-yah-dahn kel-DYM/biz oo-lyh-bree-TAH-nee-yah-dahn kel-DIK)</td>
+          </tr>
+          <tr>
+              <td>Thank you!</td>
+              <td>Спасибо! (spuh-SEE-buh)</td>
+              <td>Рахмет! (rakh-MET)</td>
+          </tr>
+          <tr>
+              <td>Excuse me (Sorry)</td>
+              <td>
+Извините (Простите) (eez-vee-NEET-yeh) (prah-STEET-yeh)</td>
+              <td>Кешіріңіз (ke-shee-ryh-NGYZ)</td>
+          </tr>
+          <tr>
+              <td>Help me, please</td>
+              <td>Помогите, пожалуйста (puh-mah-GEE-tyeh, puh-ZHAH-loo-stah)</td>
+              <td>Көмектесіңізші (ko-mek-TE-syh-ngiz-shee)</td>
+          </tr>
+          <tr>
+              <td>Where is the nearest store?</td>
+              <td>Где ближайший магазин? (gdye blee-ZHAI-sheey muh-gah-ZEEN?)</td>
+              <td>Ең жақын дүкен қай жерде? (en zhah-KYN DOO-koon KAI zher-DE?)</td>
+          </tr>
+          <tr>
+              <td>I’m lost</td>
+              <td>Я заблудился (-ась) (m/f). (yah zah-bloo-DEEL-suh / zah-bloo-DEE-luhs’)</td>
+              <td>Мен адасып кеттім (MEN ah-DAH-syp ket-TIM)</td>
+          </tr>
+          <tr>
+              <td>I don’t understand</td>
+              <td>Не понимаю (nee puh-nee-MIGH-yoo)</td>
+              <td>Түсінбеймін (too-soon-BEI-min)</td>
+          </tr>
+          <tr>
+              <td>Where is it?</td>
+              <td>Где это находится? (gdye EH-tuh nah-KHO-deet-sya?)</td>
+              <td>Бұл қай жерде? (bool kigh zher-DE?)</td>
+          </tr>
+          <tr>
+              <td>How can I get to this place?</td>
+              <td>Как можно дойти до этого места? (kahk MOZH-nuh digh-TEE duh EH-tuh-guh MYES-tuh?)</td>
+              <td>Мына жерге қалай жетуге болады? (my-NAH zher-GE kah-LAI zhe-TOO-ge bo-LAH-dyh?)</td>
+          </tr>
+          <tr>
+              <td>Show me, please</td>
+              <td>Покажите, пожалуйста (puh-kah-ZHEE-tye, puh-ZHAH-luh-stuh)</td>
+              <td>Көрсетіп жіберіңізші (kor-soh-TOOP zhee-be-RYH-niz-shee)</td>
+          </tr>
+          <tr>
+              <td>Is there Internet here?</td>
+              <td>Здесь есть интернет? (Zdyes’ yest’ een-ter-NET?)</td>
+              <td>Бұл жерде интернет бар ма? (bool zher-DE een-ter-NET bahr mah?)</td>
+          </tr>
+          <tr>
+              <td>How can I connect to the Internet?</td>
+              <td>Как можно подключиться к интернету? (kahk MOZH-nuh pahd-klyu-CHEET-sya k een-ter-NEH-too?)</td>
+              <td>Интернетке қалай қосылуға болады? (een-ter-net-KEH kah-LAI ko-sy-LOO-gah bo-LAH-dyh?)</td>
+          </tr>
+          <tr>
+              <td>Where can I find a taxi?</td>
+              <td>Где можно найти такси? (Gdye MOZH-nah nai-TEE tahk-SEE?)</td>
+              <td>Такси қайдан табуға болады? (tahk-SEE kai-DAHN tah-boo-GAH bo-LAH-dyh?)</td>
+          </tr>
+      </table>
+    </div>
+    <div id="menu3" class="tab-pane fade">
+      <h3>Menu 3</h3>
+      <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+    </div>
+  </div>
+</div>
+{% endblock %}
+

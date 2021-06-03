@@ -221,6 +221,10 @@ class CustomerOrderDetailView(CheckUser, DetailView):
         return super().dispatch(request, *args, **kwargs)
 
 
+def planyourtrip(request):
+    return render(request, "main/planyourtrip.html")
+
+
 def akmola(request):
     url = 'https://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid=78188f6bb68d92e1918239bccf8980ac'
     city = 'Kokshetau'
