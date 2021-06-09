@@ -3,27 +3,244 @@
 {% block title %}
     KazTravel - AboutUs Page
 {% endblock %}
+{% block style %}
+    <style>
+    body {
+        margin: 0;
+    }
+
+    html {
+      box-sizing: border-box;
+    }
+
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }
+
+    .column_about {
+      float: left;
+      width: 33.3%;
+      margin-bottom: 16px;
+      padding: 0 8px;
+    }
+
+    .card_about {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      margin: 8px;
+    }
+
+    .about-section {
+      padding: 50px;
+      text-align: center;
+      background-color: #474e5d;
+      color: white;
+    }
+
+    .container {
+      padding: 0 16px;
+    }
+
+    .container::after, .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+    .title {
+      color: grey;
+    }
+
+    .button_about {
+      border: none;
+      outline: 0;
+      display: inline-block;
+      padding: 8px;
+      color: white;
+      background-color: #000;
+      text-align: center;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .button_about:hover {
+      background-color: #555;
+    }
+
+    @media screen and (max-width: 650px) {
+      .column_about {
+        width: 100%;
+        display: block;
+      }
+    }
+
+    input[type=text], select, textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      margin-top: 6px;
+      margin-bottom: 16px;
+      resize: vertical;
+    }
+
+    input[type=submit] {
+      background-color: #04AA6D;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+      background-color: #45a049;
+    }
+
+    /* Style the container/contact section */
+    .container_contact {
+      border-radius: 5px;
+      background-color: #f2f2f2;
+      padding: 10px;
+    }
+
+    /* Create two columns that float next to eachother */
+    .column_contact {
+      float: left;
+      width: 50%;
+      margin-top: 6px;
+      padding: 20px;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 600px) {
+      .column_contact, input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+      }
+    }
+
+    #myInput1, #myInput2, #myInput3{
+        width: 100%;
+    }
+</style>
+{% endblock %}
 
 {% block content %}
-<div id="about" class="container-fluid">
-  <div class="row">
-    <div class="col-sm-8">
-      <h2>About Us Page</h2><br>
-      <h3>KazTravel Guide - is a website that helps tourists to plan their trips to Kazakhstan!</h3><br>
-      <h3>Auditory</h3>
-      <p>The main auditory of our website will be tourists that plan to visit our country. And our
+    <div class="about-section">
+        <h1>About Us Page</h1>
+        <p>KazTravel Guide - is a website that helps tourists to plan their trips to Kazakhstan!</p>
+        <p>This website is made by Astana IT University students</p>
+    </div>
+
+<h2 style="text-align:center">Our Team</h2>
+<div class="row">
+  <div class="column_about">
+    <div class="card_about">
+      <img src="{% static 'home/images/bekzat.jpg' %}" alt="Bekzat" style="width:100%">
+      <div class="container">
+        <h2>Bekzat Abdrazak</h2>
+        <p class="title">Front-end developer</p>
+        <p>Second-year student of group IT-1901 in Astana IT University</p>
+        <input type="text" value="b.abdrazak@astanait.edu.kz" id="myInput1" readonly><br><br>
+        <p><button class="button_about" onclick="copy1()">Copy Email</button></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column_about">
+    <div class="card_about">
+      <img src="{% static 'home/images/aruzhan.jpg' %}" alt="Aruzhan" style="width:100%">
+      <div class="container">
+        <h2>Aruzhan Amangeldieva</h2>
+        <p class="title">Front-end developer</p>
+        <p>Second-year student of group IT-1903 in Astana IT University</p>
+        <input type="text" value="a.amangeldieva@astanait.edu.kz" id="myInput2" readonly><br><br>
+        <p><button class="button_about" onclick="copy2()">Copy Email</button></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column_about">
+    <div class="card_about">
+      <img src="{% static 'home/images/kuat.jpg' %}" alt="Kuat" style="width:100%">
+      <div class="container">
+        <h2>Kuat Azimkhan</h2>
+        <p class="title">Back-end developer</p>
+        <p>Second-year student of group IT-1901 in Astana IT University</p>
+        <input type="text" value="k.azimkhan@astanait.edu.kz" id="myInput3" readonly><br><br>
+        <p><button class="button_about" onclick="copy3()">Copy Email</button></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="about-section">
+        <h1>Auditory</h1>
+        <p>The main auditory of our website will be tourists that plan to visit our country. And our
         website will help them to find interesting places of Kazakhstan and will help to plan their
         visit including where they will live, transport and stuff like that. Also, people of Kazakhstan
         can also use our website to make a tour inside Kazakhstan, because not all people visited all
         beautiful places of Kazakhstan. So, in general, all people who enjoy travelling and want to
-        know more about our country can visit our website.
-      </p>
-      <p>By Astana IT University students</p>
-      <br><button class="btn btn-default btn-lg">Get in Touch</button>
+        know more about our country can visit our website.</p>
+</div>
+
+
+<div class="container_contact">
+  <div style="text-align:center">
+    <h2>Contact Us</h2>
+    <p>Leave us a message:</p>
+  </div>
+  <div class="row">
+    <div class="column_contact">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Logo_astana_it_university.png" style="width:100%">
     </div>
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-signal logo"></span>
+    <div class="column_contact">
+      <form action="">
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+        <label for="country">Country</label>
+        <select id="country" name="country">
+          <option value="australia">Australia</option>
+          <option value="canada">Canada</option>
+          <option value="usa">USA</option>
+        </select>
+        <label for="subject">Comment</label>
+        <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
+        <input type="submit" value="Submit">
+      </form>
     </div>
   </div>
 </div>
+<script>
+    function copy1() {
+      var copyText = document.getElementById("myInput1");
+      copyText.select();
+      copyText.setSelectionRange(0, 99999)
+      document.execCommand("copy");
+      alert("Copied the text: " + copyText.value);
+    }
+
+    function copy2() {
+      var copyText = document.getElementById("myInput2");
+      copyText.select();
+      copyText.setSelectionRange(0, 99999)
+      document.execCommand("copy");
+      alert("Copied the text: " + copyText.value);
+    }
+
+    function copy3() {
+      var copyText = document.getElementById("myInput3");
+      copyText.select();
+      copyText.setSelectionRange(0, 99999)
+      document.execCommand("copy");
+      alert("Copied the text: " + copyText.value);
+    }
+</script>
 {% endblock %}
