@@ -255,3 +255,195 @@ def aktobe(request):
     }
     print(city_weather)
     return render(request, "main/aktobe.html", {'city_weather': city_weather})
+
+
+def kostanay(request):
+    url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid=78188f6bb68d92e1918239bccf8980ac'
+    city = 'Kostanay'
+
+    r = requests.get(url.format(city)).json()
+
+    city_weather = {
+        'city': city,
+        'temperature': r['main']['temp'],
+        'description': r['weather'][0]['description'],
+        'icon': r['weather'][0]['icon']
+    }
+    print(city_weather)
+    return render(request, "main/kostanay.html", {'city_weather': city_weather})
+
+
+def kyzylorda(request):
+    url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid=78188f6bb68d92e1918239bccf8980ac'
+    city = 'Kyzylorda'
+
+    r = requests.get(url.format(city)).json()
+
+    city_weather = {
+        'city': city,
+        'temperature': r['main']['temp'],
+        'description': r['weather'][0]['description'],
+        'icon': r['weather'][0]['icon']
+    }
+    print(city_weather)
+    return render(request, "main/kyzylorda.html", {'city_weather': city_weather})
+
+
+def atyrau(request):
+    url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid=78188f6bb68d92e1918239bccf8980ac'
+    city = 'Atyrau'
+
+    r = requests.get(url.format(city)).json()
+
+    city_weather = {
+        'city': city,
+        'temperature': r['main']['temp'],
+        'description': r['weather'][0]['description'],
+        'icon': r['weather'][0]['icon']
+    }
+    print(city_weather)
+    return render(request, "main/Atyrau.html", {'city_weather': city_weather})
+
+
+def westkz(request):
+    url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid=78188f6bb68d92e1918239bccf8980ac'
+    city = 'Oral'
+
+    r = requests.get(url.format(city)).json()
+
+    city_weather = {
+        'city': city,
+        'temperature': r['main']['temp'],
+        'description': r['weather'][0]['description'],
+        'icon': r['weather'][0]['icon']
+    }
+    print(city_weather)
+    return render(request, "main/westkz.html", {'city_weather': city_weather})
+
+
+def karagandy(request):
+    url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid=78188f6bb68d92e1918239bccf8980ac'
+    city = 'Karagandy'
+
+    r = requests.get(url.format(city)).json()
+
+    city_weather = {
+        'city': city,
+        'temperature': r['main']['temp'],
+        'description': r['weather'][0]['description'],
+        'icon': r['weather'][0]['icon']
+    }
+    print(city_weather)
+    return render(request, "main/karagandy.html", {'city_weather': city_weather})
+
+
+def northkz(request):
+    url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid=78188f6bb68d92e1918239bccf8980ac'
+    city = 'Petropavl'
+
+    r = requests.get(url.format(city)).json()
+
+    city_weather = {
+        'city': city,
+        'temperature': r['main']['temp'],
+        'description': r['weather'][0]['description'],
+        'icon': r['weather'][0]['icon']
+    }
+    print(city_weather)
+    return render(request, "main/northkz.html", {'city_weather': city_weather})
+
+
+def pavlodar(request):
+    url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid=78188f6bb68d92e1918239bccf8980ac'
+    city = 'Pavlodar'
+
+    r = requests.get(url.format(city)).json()
+
+    city_weather = {
+        'city': city,
+        'temperature': r['main']['temp'],
+        'description': r['weather'][0]['description'],
+        'icon': r['weather'][0]['icon']
+    }
+    print(city_weather)
+    return render(request, "main/pavlodar.html", {'city_weather': city_weather})
+
+
+def eastkz(request):
+    url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid=78188f6bb68d92e1918239bccf8980ac'
+    city = 'Oskemen'
+
+    r = requests.get(url.format(city)).json()
+
+    city_weather = {
+        'city': city,
+        'temperature': r['main']['temp'],
+        'description': r['weather'][0]['description'],
+        'icon': r['weather'][0]['icon']
+    }
+    print(city_weather)
+    return render(request, "main/eastkz.html", {'city_weather': city_weather})
+
+
+def almaty(request):
+    url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid=78188f6bb68d92e1918239bccf8980ac'
+    city = 'Almaty'
+
+    r = requests.get(url.format(city)).json()
+
+    city_weather = {
+        'city': city,
+        'temperature': r['main']['temp'],
+        'description': r['weather'][0]['description'],
+        'icon': r['weather'][0]['icon']
+    }
+    print(city_weather)
+    return render(request, "main/almaty.html", {'city_weather': city_weather})
+
+
+def mangystau(request):
+    url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid=78188f6bb68d92e1918239bccf8980ac'
+    city = 'Aktau'
+
+    r = requests.get(url.format(city)).json()
+
+    city_weather = {
+        'city': city,
+        'temperature': r['main']['temp'],
+        'description': r['weather'][0]['description'],
+        'icon': r['weather'][0]['icon']
+    }
+    print(city_weather)
+    return render(request, "main/mangystau.html", {'city_weather': city_weather})
+
+
+def southkz(request):
+    url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid=78188f6bb68d92e1918239bccf8980ac'
+    city = 'Shymkent'
+
+    r = requests.get(url.format(city)).json()
+
+    city_weather = {
+        'city': city,
+        'temperature': r['main']['temp'],
+        'description': r['weather'][0]['description'],
+        'icon': r['weather'][0]['icon']
+    }
+    print(city_weather)
+    return render(request, "main/southkz.html", {'city_weather': city_weather})
+
+
+def zhambyl(request):
+    url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid=78188f6bb68d92e1918239bccf8980ac'
+    city = 'Taraz'
+
+    r = requests.get(url.format(city)).json()
+
+    city_weather = {
+        'city': city,
+        'temperature': r['main']['temp'],
+        'description': r['weather'][0]['description'],
+        'icon': r['weather'][0]['icon']
+    }
+    print(city_weather)
+    return render(request, "main/zhambyl.html", {'city_weather': city_weather})
