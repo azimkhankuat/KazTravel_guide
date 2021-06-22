@@ -15,60 +15,46 @@
       </div>
 
       <div class="booking_info">
-
-        <div class="opt">
-          <span class="active myfont">Hotel</span>
-          <span class="myfont">Flight</span>
+        <div class="opt" >
+          <span class="active myfont" id="opt1" onclick="myFunction()" style="padding-left: 0.65vw">Why Kazakhstan?</span>
+          <span class="myfont" id="opt2" onclick="myFunction2()" style="padding-left: 1.32vw">Do I need visa?</span>
         </div>
 
         <div class="booking_details">
-          <div class="item">
-            <div class="people"><h5 class="myfont">Where to go</h5></div>
-            <i class="fa fa-search"></i>
-              <select id="city" name="city" class="days">
-                <option value="akmola">Akmola</option>
-                <option value="aktobe">Aktobe</option>
-                <option value="almaty">Almaty</option>
-                <option value="atyrau">Atyrau</option>
-                <option value="east">East Kz</option>
-                <option value="jambyl">Jambyl</option>
-                <option value="karagandy">Karagandy</option>
-                <option value="kostanay">Kostanay</option>
-                <option value="kyzylorda">Kyzylorda</option>
-                <option value="mangysatu">Mangystau</option>
-                <option value="north">North Kz</option>
-                <option value="paclodar">Pavlodar</option>
-                <option value="turkestan">Turkestan</option>
-                <option value="west">West Kz</option>
-              </select>
-          </div>
+      <p id="about_kz">
+        In our globalized era, when travel destinations are becoming increasingly similar, many travelers are looking for something authentic and unusual. Kazakhstan, with its unique culture, rich history and vast unexplored areas, is definitely worth discovering.
+        The nature of Kazakhstan is striking in its diversity and splendor. <b>Towering mountain ranges, vast flat steppes, green valleys, sprawling deserts, deep canyons, and turquoise lakes </b> – Kazakhstan has everything to stun even the most experienced traveler. Nowadays, when there are fewer and fewer areas of pristine nature in the world, Kazakhstan boasts an abundance of natural beauty. From time immemorial, our ancestral nomads lived in connection with nature, treating it with care and ensuring sustainability.
+      </p>
 
-          <div class="item">
-            <div class="date"><h5 class="myfont">Check in</h5></div>
-            <input type="date" id="start" name="trip-start"
-             value="YYYY-MM-DD" min="2021-01-01" max="2021-12-31">
-          </div>
+      <p id="about_visa" style="display: none;">
+        Foreign citizens enter and leave the Republic of Kazakhstan through checkpoints on the state border using foreign passports or documents replacing them, if they have Kazakhstan visas (if required).
+        As of March 2020, citizens of 73 countries could enter Kazakhstan without a visa. <b>However, visa-free regime for 54 countries has been suspended until May 1, 2021.</b> Visa-free regime now applies only to citizens of <b>Azerbaijan, Argentina, Armenia, Belarus, Brazil, Ecuador, Georgia, Hong Kong, Kyrgyzstan, Moldova, Mongolia, Russia, Serbia, South Korea, Tajikistan, Turkey, UAE, Ukraine and Uzbekistan.</b>
+      </p>
+    </div>
 
-          <div class="item">
-            <div class="date"><h5 class="myfont">Check out</h5></div>
-            <input type="date" id="end" name="trip-end"
-             value="YYYY-MM-DD" min="2021-01-01" max="2021-12-31">
-          </div>
+      <script>
+      function myFunction() {
+        var x = document.getElementById("about_kz");
+        x.style.display = "block";
+        var y = document.getElementById("about_visa");
+        y.style.display = "none";
+        var a = document.getElementById("opt1");
+        a.style.backgroundColor = "#6A994E";
+        var b = document.getElementById("opt2");
+        b.style.backgroundColor = "#386641";
+      }
+      function myFunction2() {
+        var x = document.getElementById("about_kz");
+        x.style.display = "none";
+        var y = document.getElementById("about_visa");
+        y.style.display = "block";
+        var a = document.getElementById("opt1");
+        a.style.backgroundColor = "#386641";
+        var b = document.getElementById("opt2");
+        b.style.backgroundColor = "#6A994E";
+      }
+      </script>
 
-          <div class="item">
-            <div class="people"><h5 class="myfont">Guests</h5></div>
-            <select id="guest" name="guest" class="days">
-                <option value="guest1">1 guest</option>
-                <option value="guest2">2 guests</option>
-                <option value="guest3">3 guests</option>
-              </select>
-          </div>
-
-          <div class="item">
-            <div class="cta active">Search</div>
-          </div>
-
-        </div>
 
       </div>
 
